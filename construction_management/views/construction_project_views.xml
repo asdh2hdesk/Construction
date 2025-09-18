@@ -1,0 +1,147 @@
+<odoo>
+    <record id="view_construction_project_form" model="ir.ui.view">
+        <field name="name">construction.project.form</field>
+        <field name="model">construction.project</field>
+        <field name="arch" type="xml">
+            <form string="Construction Project">
+                <header>
+                    <div style="float: right;">
+                        <button name="action_open_project_dashboard"
+                                type="object"
+                                string="Dashboard"
+                                class="btn-primary"/>
+                    </div>
+                </header>
+                <sheet>
+<!--                    <button name="action_open_project_dashboard"-->
+<!--                                        type="object"-->
+<!--                                        string="Dashboard"-->
+<!--                                        class="btn-primary custom-right-align"/>-->
+                    <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Project Title" nolabel="1"/>
+                            </h1>
+                    </div>
+                    <group>
+                        <group>
+<!--                            <field name="name"/>-->
+                            <field name="e_start_date"/>
+                            <field name="e_end_date"/>
+                            <field name="e_contract_value"/>
+                            <field name="currency_id"/>
+                        </group>
+                        <group>
+                            <field name="progress_percent"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="contract_value"/>
+                            <field name="currency_id"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="e_material_cost"/>
+                            <field name="e_labor_cost"/>
+                            <field name="e_equipment_cost"/>
+                            <field name="e_total_cost"/>
+                        </group>
+                        <group>
+                            <field name="material_cost"/>
+                            <field name="labor_cost"/>
+                            <field name="equipment_cost"/>
+                            <field name="total_cost"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Project Timeline">
+                            <field name="timeline_ids"/>
+                        </page>
+                        <page string="Timesheets">
+                            <field name="timesheet_ids">
+                                <list editable="bottom">
+                                    <field name="date"/>
+                                    <field name="employee_id"/>
+                                    <field name="construction_project_id"/>
+                                    <field name="construction_task_id" domain="[('project_id', '=', construction_project_id)]"/>
+                                    <field name="name"/>
+                                    <field name="image_attachment" widget="image" options="{'size': [64, 64], 'zoom': true, 'preview_image': 'image_attachment'}"/>
+                                    <field name="image_attachment" widget="binary" string="Download Image" filename="image_filename"/>
+<!--                                    <field name="image_attachment" widget="binary" options="{'zoom': true, 'preview_image': 'image_attachment'}"/>-->
+                                </list>
+                                <form>
+                                    <group>
+                                        <field name="date"/>
+                                        <field name="employee_id"/>
+                                        <field name="project_id"/>
+                                        <field name="construction_task_id" domain="[('project_id', '=', project_id)]"/>
+                                        <field name="unit_amount"/>
+                                        <field name="name"/>
+                                    </group>
+                                    <group>
+                                        <field name="image_attachment" widget="image" options="{'zoom': true, 'zoom_delay': 1000}"/>
+                                        <field name="image_filename"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="BOQ">
+                            <field name="boq_ids">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="project_id"/>
+                                    <field name="quantity"/>
+                                    <field name="unit"/>
+                                    <field name="unit_price"/>
+                                    <field name="total_price"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Inventory Moves">
+                            <field name="stock_move_ids"/>
+                        </page>
+                        <page string="Purchases">
+                            <field name="purchase_ids"/>
+                        </page>
+<!--                        <page string="Assets">-->
+<!--                            <field name="asset_ids"/>-->
+<!--                        </page>-->
+                        <page string="Invoices">
+                            <field name="invoice_ids"/>
+                        </page>
+                        <page string="Payments">
+                            <field name="payment_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_construction_project_tree" model="ir.ui.view">
+        <field name="name">construction.project.tree</field>
+        <field name="model">construction.project</field>
+        <field name="arch" type="xml">
+            <list string="Construction Projects">
+                <field name="name"/>
+                <field name="contract_value"/>
+                <field name="material_cost"/>
+                <field name="labor_cost"/>
+                <field name="equipment_cost"/>
+                <field name="progress_percent"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_construction_project" model="ir.actions.act_window">
+        <field name="name">Construction Projects</field>
+        <field name="res_model">construction.project</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="construction_menu_root" name="Construction" sequence="100"/>
+    <menuitem id="construction_projects_menu" name="Projects" parent="construction_menu_root" sequence="20"/>
+    <menuitem id="construction_projects_submenu" name="All Projects" parent="construction_projects_menu" action="action_construction_project"/>
+
+
+</odoo>

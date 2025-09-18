@@ -1,0 +1,331 @@
+.o_project_dashboard {
+    background: url('/construction_management/static/src/img/dashboard_bg.png') no-repeat center center fixed;
+    background-size: cover;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.o_project_dashboard::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(253, 186, 116, 0.3) 0%, transparent 50%),  /* light orange */
+        radial-gradient(circle at 80% 20%, rgba(134, 239, 172, 0.25) 0%, transparent 50%), /* light green */
+        radial-gradient(circle at 40% 40%, rgba(255, 213, 128, 0.25) 0%, transparent 50%); /* pale golden */
+    animation: float 20s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
+    33% { transform: translate(30px, -30px) rotate(120deg); }
+    66% { transform: translate(-20px, 20px) rotate(240deg); }
+}
+
+/* KPI Cards */
+.o_project_kpis .kpi-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    border-left: 4px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.o_project_kpis .kpi-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.kpi-card .kpi-icon {
+    font-size: 2.5rem;
+    margin-right: 15px;
+    opacity: 0.8;
+}
+
+.kpi-card .kpi-content {
+    flex: 1;
+}
+
+.kpi-card .kpi-label {
+    font-size: 0.9rem;
+    color: black;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.kpi-card .kpi-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+/* Secondary KPIs */
+.o_project_secondary_kpis .small-kpi {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.o_project_secondary_kpis .small-kpi:hover {
+    transform: translateY(-1px);
+}
+
+.small-kpi-label {
+    font-size: 0.8rem;
+    color: black;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.small-kpi-value {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+/* Project Info Card */
+.project-info-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.project-info-card h5 {
+    color: #495057;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Chart Containers */
+.chart-container {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    height: 400px;
+}
+.small-kpi-value .message {
+    font-size: 0.8rem; /* smaller for text */
+    font-weight: normal;
+    display: block;
+    margin-top: 4px;
+    color: inherit; /* keep same red/green/gray color */
+}
+.chart-container canvas {
+    max-height: 350px;
+}
+
+/* Activities Card */
+.activities-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.activities-card h5 {
+    color: #495057;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.activity-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.activity-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-icon {
+    width: 40px;
+    height: 40px;
+    background: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.activity-icon i {
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+
+.activity-content {
+    flex: 1;
+}
+
+.activity-title {
+    margin-bottom: 5px;
+}
+
+.activity-description {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.activity-date {
+    font-size: 0.8rem;
+}
+
+/* Badges */
+.badge-active {
+    background-color: #28a745;
+}
+
+.badge-completed {
+    background-color: #007bff;
+}
+
+.badge-draft {
+    background-color: #6c757d;
+}
+
+.badge-cancelled {
+    background-color: #dc3545;
+}
+
+/* Color Variations for KPI Cards */
+.kpi-card:nth-child(1) {
+    border-left-color: #007bff;
+}
+
+.kpi-card:nth-child(2) {
+    border-left-color: #28a745;
+}
+
+.kpi-card:nth-child(3) {
+    border-left-color: #ffc107;
+}
+
+.kpi-card:nth-child(4) {
+    border-left-color: #17a2b8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .o_project_dashboard {
+        padding: 10px;
+    }
+
+    .o_dashboard_header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .chart-container {
+        height: 300px;
+        margin-bottom: 15px;
+    }
+
+    .chart-container canvas {
+        max-height: 250px;
+    }
+
+    .kpi-card {
+        margin-bottom: 15px;
+    }
+
+    .small-kpi {
+        margin-bottom: 10px;
+    }
+}
+
+/* Loading Spinner */
+.o_loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+
+.o_loader:before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Button Styles */
+.btn {
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+/* Scrollbar Styling */
+.activity-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.activity-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.activity-list::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.activity-list::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}

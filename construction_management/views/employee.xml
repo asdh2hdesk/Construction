@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Employee Work Tree View -->
+    <record id="view_construction_employee_work_tree" model="ir.ui.view">
+        <field name="name">construction.employee.work.tree</field>
+        <field name="model">construction.employee.work</field>
+        <field name="arch" type="xml">
+            <list string="Employee Work Records" decoration-success="state=='approved'"
+                  decoration-warning="state=='confirmed'" decoration-muted="state=='cancelled'">
+                <field name="name"/>
+                <field name="work_date"/>
+                <field name="employee_id"/>
+                <field name="project_id"/>
+                <field name="construction_task_id" domain="[('project_id', '=', project_id)]"/>
+                <field name="working_hours" widget="float_time"/>
+                <field name="overtime_hours" widget="float_time"/>
+                <field name="total_pay" widget="monetary"/>
+                <field name="payment_status"/>
+                <field name="state" widget="badge"
+                       decoration-success="state=='approved'"
+                       decoration-warning="state=='confirmed'"
+                       decoration-danger="state=='cancelled'"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Employee Work Form View -->
+    <record id="view_construction_employee_work_form" model="ir.ui.view">
+        <field name="name">construction.employee.work.form</field>
+        <field name="model">construction.employee.work</field>
+        <field name="arch" type="xml">
+            <form string="Employee Work Record">
+                <header>
+                    <button name="action_confirm" type="object" string="Confirm"
+                            class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_approve" type="object" string="Approve"
+                            class="btn-primary" invisible="state != 'confirmed'"/>
+                    <button name="action_cancel" type="object" string="Cancel"
+                            invisible="not (state in ['draft','confirmed'])"/>
+                    <button name="action_reset_to_draft" type="object" string="Reset to Draft"
+                            invisible="state != 'cancelled'"/>
+                    <button name="action_mark_paid" type="object" string="Mark as Paid"
+                            class="btn-success" invisible="not (state == 'approved' and payment_status != 'paid')"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,approved"/>
+                </header>
+
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group name="basic_info">
+                            <field name="employee_id" options="{'no_create': True}"/>
+                            <field name="project_id" options="{'no_create': True}"/>
+                            <field name="work_date"/>
+                            <field name="supervisor_id" options="{'no_create': True}"/>
+                        </group>
+                        <group name="work_details">
+                            <field name="construction_task_id" domain="[('project_id', '=', project_id)]"/>
+<!--                            <field name="location"/>-->
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Work Details">
+                            <group>
+                                <group name="time_info">
+                                    <field name="start_time" widget="float_time"/>
+                                    <field name="end_time" widget="float_time"/>
+                                    <field name="break_hours" widget="float_time"/>
+                                    <field name="working_hours" widget="float_time" readonly="1"/>
+                                    <field name="overtime_hours" widget="float_time" readonly="1"/>
+                                </group>
+                                <group name="pay_info">
+                                    <field name="hourly_rate" widget="monetary"/>
+                                    <field name="overtime_rate" widget="monetary" readonly="1"/>
+                                    <field name="regular_pay" widget="monetary" readonly="1"/>
+                                    <field name="overtime_pay" widget="monetary" readonly="1"/>
+                                    <field name="total_pay" widget="monetary" readonly="1" class="oe_subtotal_footer_separator"/>
+                                </group>
+                            </group>
+                            <group string="Task Description">
+                                <field name="task_description" nolabel="1"/>
+                            </group>
+                            <group string="Notes">
+                                <field name="notes" nolabel="1"/>
+                            </group>
+                        </page>
+
+                        <page string="Payment Information">
+                            <group>
+                                <group>
+                                    <field name="payment_status"/>
+                                    <field name="paid_amount" widget="monetary"/>
+                                    <field name="payment_date"/>
+                                    <field name="payment_reference"/>
+                                </group>
+                                <group>
+                                    <field name="approved_by" readonly="1"/>
+                                    <field name="approved_date" readonly="1"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Employee Work Calendar View -->
+    <record id="view_construction_employee_work_calendar" model="ir.ui.view">
+        <field name="name">construction.employee.work.calendar</field>
+        <field name="model">construction.employee.work</field>
+        <field name="arch" type="xml">
+            <calendar string="Employee Work Calendar"
+                      date_start="work_date"
+                      color="employee_id"
+                      event_open_popup="True">
+                <field name="employee_id"/>
+                <field name="project_id"/>
+                <field name="construction_task_id" domain="[('project_id', '=', project_id)]"/>
+                <field name="working_hours"/>
+            </calendar>
+        </field>
+    </record>
+
+
+    <!-- Employee Work Search View -->
+    <record id="view_construction_employee_work_search" model="ir.ui.view">
+        <field name="name">construction.employee.work.search</field>
+        <field name="model">construction.employee.work</field>
+        <field name="arch" type="xml">
+            <search string="Employee Work Records">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="project_id"/>
+                <field name="construction_task_id" domain="[('project_id', '=', project_id)]"/>
+                <field name="work_date"/>
+                <filter string="Today" name="today"
+                        domain="[('work_date', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                <filter string="This Week" name="this_week"
+                        domain="[('work_date', '&gt;=', (context_today() - datetime.timedelta(days=context_today().weekday())).strftime('%Y-%m-%d'))]"/>
+                <filter string="This Month" name="this_month"
+                        domain="[('work_date', '&gt;=', context_today().strftime('%Y-%m-01'))]"/>
+                <separator/>
+                <filter string="Draft" name="draft" domain="[('state', '=', 'draft')]"/>
+                <filter string="Confirmed" name="confirmed" domain="[('state', '=', 'confirmed')]"/>
+                <filter string="Approved" name="approved" domain="[('state', '=', 'approved')]"/>
+                <separator/>
+                <filter string="Pending Payment" name="pending_payment" domain="[('payment_status', '=', 'pending')]"/>
+                <filter string="Paid" name="paid" domain="[('payment_status', '=', 'paid')]"/>
+                <group expand="1" string="Group By">
+                    <filter string="Employee" name="group_employee" context="{'group_by': 'employee_id'}"/>
+                    <filter string="Project" name="group_project" context="{'group_by': 'project_id'}"/>
+                    <filter string="Date" name="group_date" context="{'group_by': 'work_date'}"/>
+                    <filter string="Task Category" name="group_task" context="{'group_by': 'construction_task_id'}"/>
+                    <filter string="Status" name="group_status" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Employee Work Action -->
+    <record id="action_construction_employee_work" model="ir.actions.act_window">
+        <field name="name">Employee Work Records</field>
+        <field name="res_model">construction.employee.work</field>
+        <field name="view_mode">list,form,calendar</field>
+        <field name="search_view_id" ref="view_construction_employee_work_search"/>
+        <field name="context">{'search_default_this_month': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first employee work record!
+            </p>
+            <p>
+                Track daily work activities, hours, and payments for construction employees.
+            </p>
+        </field>
+    </record>
+
+    <!-- Employee Work Pivot View for Reports -->
+    <record id="view_construction_employee_work_pivot" model="ir.ui.view">
+        <field name="name">construction.employee.work.pivot</field>
+        <field name="model">construction.employee.work</field>
+        <field name="arch" type="xml">
+            <pivot string="Employee Work Analysis">
+                <field name="employee_id" type="row"/>
+                <field name="work_date" type="col" interval="month"/>
+                <field name="working_hours" type="measure"/>
+                <field name="overtime_hours" type="measure"/>
+                <field name="total_pay" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Employee Work Graph View -->
+    <record id="view_construction_employee_work_graph" model="ir.ui.view">
+        <field name="name">construction.employee.work.graph</field>
+        <field name="model">construction.employee.work</field>
+        <field name="arch" type="xml">
+            <graph string="Employee Work Statistics" type="line">
+                <field name="work_date" type="row" interval="day"/>
+                <field name="working_hours" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- Reports Action -->
+    <record id="action_construction_employee_work_reports" model="ir.actions.act_window">
+        <field name="name">Employee Work Reports</field>
+        <field name="res_model">construction.employee.work</field>
+        <field name="view_mode">pivot,graph</field>
+        <field name="context">{'search_default_this_month': 1}</field>
+    </record>
+
+    <!-- Main Menu -->
+    <menuitem id="menu_construction_employees"
+              name="Employee Management"
+              parent="construction_menu_root"
+              sequence="70"/>
+
+    <!-- Sub-menus -->
+    <menuitem id="menu_construction_employee_work"
+              name="Work Records"
+              parent="menu_construction_employees"
+              action="action_construction_employee_work"
+              sequence="10"/>
+
+    <menuitem id="menu_construction_employee_reports"
+              name="Reports"
+              parent="menu_construction_employees"
+              action="action_construction_employee_work_reports"
+              sequence="20"/>
+
+    <!-- Employee Work Records in Project Form -->
+    <record id="view_construction_project_form_inherit" model="ir.ui.view">
+        <field name="name">construction.project.form.inherit</field>
+        <field name="model">construction.project</field>
+        <field name="inherit_id" ref="construction_management.view_construction_project_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Employee Work">
+                    <field name="employee_work_ids" mode="list,form">
+                        <list editable="bottom">
+                            <field name="work_date"/>
+                            <field name="employee_id"/>
+                            <field name="construction_task_id"/>
+                            <field name="working_hours" widget="float_time"/>
+                            <field name="total_pay" widget="monetary"/>
+                            <field name="payment_status"/>
+                            <field name="state"/>
+                        </list>
+                    </field>
+                    <group class="oe_subtotal_footer oe_right">
+                        <field name="total_labor_cost_from_work" widget="monetary"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Sequence Data -->
+    <record id="sequence_construction_employee_work" model="ir.sequence">
+        <field name="name">Construction Employee Work</field>
+        <field name="code">construction.employee.work</field>
+        <field name="prefix">EW</field>
+        <field name="padding">4</field>
+        <field name="number_increment">1</field>
+    </record>
+
+</odoo>

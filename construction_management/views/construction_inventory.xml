@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree View -->
+    <record id="view_construction_inventory_tree" model="ir.ui.view">
+        <field name="name">construction.inventory.tree</field>
+        <field name="model">construction.inventory</field>
+        <field name="arch" type="xml">
+            <list string="Construction Inventory"
+                  decoration-danger="stock_status=='out_of_stock'"
+                  decoration-warning="stock_status=='low'"
+                  decoration-info="stock_status=='over_stock'"
+                  decoration-success="stock_status=='adequate'">
+                <field name="material_id"/>
+<!--                <field name="project_id"/>-->
+                <field name="current_stock"/>
+                <field name="total_required"/>
+                <field name="allocated_qty"/>
+                <field name="available_qty"/>
+<!--                <field name="unit"/>-->
+                <field name="unit_cost"/>
+                <field name="total_value"/>
+                <field name="stock_status"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_construction_inventory_form" model="ir.ui.view">
+        <field name="name">construction.inventory.form</field>
+        <field name="model">construction.inventory</field>
+        <field name="arch" type="xml">
+            <form string="Construction Inventory">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_boq_items" type="object"
+                                class="oe_stat_button" icon="fa-list">
+                            <field name="total_required" widget="statinfo" string="Required"/>
+                        </button>
+                    </div>
+
+                    <group>
+                        <group>
+                            <field name="material_id"/>
+<!--                            <field name="project_id"/>-->
+                            <field name="current_stock"/>
+                            <field name="unit"/>
+                            <field name="unit_cost"/>
+                        </group>
+                        <group>
+                            <field name="total_required"/>
+                            <field name="allocated_qty"/>
+                            <field name="available_qty"/>
+                            <field name="total_value"/>
+                            <field name="stock_status"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="BOQ References">
+                            <field name="boq_ids">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="project_id"/>
+                                    <field name="parent_id"/>
+                                    <field name="quantity"/>
+                                    <field name="unit_price"/>
+                                    <field name="total_price"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_construction_inventory_search" model="ir.ui.view">
+        <field name="name">construction.inventory.search</field>
+        <field name="model">construction.inventory</field>
+        <field name="arch" type="xml">
+            <search string="Construction Inventory">
+                <field name="material_id"/>
+                <field name="project_id"/>
+                <separator/>
+                <filter string="Out of Stock" name="out_of_stock"
+                        domain="[('stock_status', '=', 'out_of_stock')]"/>
+                <filter string="Low Stock" name="low_stock"
+                        domain="[('stock_status', '=', 'low')]"/>
+                <filter string="Adequate Stock" name="adequate_stock"
+                        domain="[('stock_status', '=', 'adequate')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Project" name="group_project"
+                            context="{'group_by': 'project_id'}"/>
+                    <filter string="Stock Status" name="group_status"
+                            context="{'group_by': 'stock_status'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_construction_inventory" model="ir.actions.act_window">
+        <field name="name">Construction Inventory</field>
+        <field name="res_model">construction.inventory</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_construction_inventory_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first inventory record!
+            </p>
+            <p>
+                Track materials needed for construction projects based on BOQ requirements.
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu Items -->
+    <menuitem id="menu_construction_inventory_root"
+              name="Inventory"
+              parent="construction_menu_root" sequence="50"/>
+
+    <menuitem id="menu_construction_inventory_materials"
+              name="Materials Inventory"
+              parent="menu_construction_inventory_root"
+              action="action_construction_inventory"
+              sequence="10"/>
+
+</odoo>

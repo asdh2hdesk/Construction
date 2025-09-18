@@ -1,0 +1,10 @@
+<odoo>
+    <menuitem id="menu_construction_root"
+              name="Construction"
+              sequence="10"/>
+
+    <menuitem id="menu_construction_projects"
+              name="Projects"
+              parent="menu_construction_root"
+              action="action_construction_project"/>
+</odoo>

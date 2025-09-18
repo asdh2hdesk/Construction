@@ -1,0 +1,263 @@
+<odoo>
+    <!-- Equipment Allocation Views -->
+    <record id="view_construction_equipment_allocation_tree" model="ir.ui.view">
+        <field name="name">construction.equipment.allocation.tree</field>
+        <field name="model">construction.equipment.allocation</field>
+        <field name="arch" type="xml">
+            <list string="Equipment Allocations" decoration-info="state=='draft'"
+                  decoration-warning="state=='allocated'" decoration-success="state=='returned'">
+                <field name="name"/>
+                <field name="equipment_id"/>
+                <field name="project_id"/>
+                <field name="category"/>
+                <field name="construction_task_id" domain="[('project_id', '=', project_id)]"/>
+                <field name="allocation_date"/>
+                <field name="return_date"/>
+                <field name="total_days"/>
+                <field name="total_hours"/>
+                <field name="total_cost"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_construction_equipment_allocation_form" model="ir.ui.view">
+        <field name="name">construction.equipment.allocation.form</field>
+        <field name="model">construction.equipment.allocation</field>
+        <field name="arch" type="xml">
+            <form string="Equipment Allocation">
+                <header>
+                    <button name="action_allocate" string="Allocate" type="object"
+                            class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_start_use" string="Start Use" type="object"
+                            class="btn-warning" invisible="state != 'allocated'"/>
+                    <button name="action_return" string="Return Equipment" type="object"
+                            class="btn-success" invisible="state not in ['allocated', 'in_use']"/>
+                    <button name="action_cancel" string="Cancel" type="object"
+                            invisible="state in ['returned', 'cancelled']"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,allocated,in_use,returned"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="project_id"/>
+                            <field name="equipment_id"/>
+                            <field name="category"/>
+                            <field name="construction_task_id" domain="[('project_id', '=', project_id)]"/>
+                            <field name="operator_name"/>
+                            <field name="allocation_date"/>
+                            <field name="return_date"/>
+                            <field name="actual_return_date"/>
+                        </group>
+                        <group>
+                            <field name="hourly_rate"/>
+                            <field name="daily_rate"/>
+                            <field name="total_hours"/>
+                            <field name="total_days"/>
+                            <field name="total_cost"/>
+                        </group>
+                    </group>
+                    <group string="Notes">
+                        <field name="notes" nolabel="1"/>
+                    </group>
+                    <notebook>
+                        <page string="Usage Logs">
+                            <field name="usage_log_ids">
+                                <list editable="bottom">
+                                    <field name="date"/>
+                                    <field name="hours_used"/>
+                                    <field name="fuel_consumption"/>
+                                    <field name="operator_name"/>
+                                    <field name="work_description"/>
+                                    <field name="cost_for_day"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Maintenance Logs">
+                            <field name="maintenance_log_ids">
+                                <list editable="bottom">
+                                    <field name="date"/>
+                                    <field name="maintenance_type"/>
+                                    <field name="description"/>
+                                    <field name="cost"/>
+                                    <field name="downtime_hours"/>
+                                    <field name="technician_name"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+<!--                <div class="oe_chatter">-->
+<!--                    <field name="message_follower_ids"/>-->
+<!--                    <field name="activity_ids"/>-->
+<!--                    <field name="message_ids"/>-->
+<!--                </div>-->
+            </form>
+        </field>
+    </record>
+
+    <!-- Equipment Usage Views -->
+    <record id="view_construction_equipment_usage_tree" model="ir.ui.view">
+        <field name="name">construction.equipment.usage.tree</field>
+        <field name="model">construction.equipment.usage</field>
+        <field name="arch" type="xml">
+            <list string="Equipment Usage Logs">
+                <field name="date"/>
+                <field name="equipment_id"/>
+                <field name="project_id"/>
+                <field name="hours_used"/>
+                <field name="fuel_consumption"/>
+                <field name="operator_name"/>
+                <field name="cost_for_day"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_construction_equipment_usage_form" model="ir.ui.view">
+        <field name="name">construction.equipment.usage.form</field>
+        <field name="model">construction.equipment.usage</field>
+        <field name="arch" type="xml">
+            <form string="Equipment Usage Log">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="allocation_id"/>
+                            <field name="equipment_id"/>
+                            <field name="project_id"/>
+                            <field name="date"/>
+                        </group>
+                        <group>
+                            <field name="hours_used"/>
+                            <field name="fuel_consumption"/>
+                            <field name="operator_name"/>
+                            <field name="cost_for_day"/>
+                        </group>
+                    </group>
+                    <group string="Work Description">
+                        <field name="work_description" nolabel="1"/>
+                    </group>
+                    <group string="Remarks">
+                        <field name="remarks" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Equipment Maintenance Views -->
+    <record id="view_construction_equipment_maintenance_tree" model="ir.ui.view">
+        <field name="name">construction.equipment.maintenance.tree</field>
+        <field name="model">construction.equipment.maintenance</field>
+        <field name="arch" type="xml">
+            <list string="Equipment Maintenance Logs">
+                <field name="date"/>
+                <field name="equipment_id"/>
+                <field name="project_id"/>
+                <field name="maintenance_type"/>
+                <field name="description"/>
+                <field name="cost"/>
+                <field name="downtime_hours"/>
+                <field name="technician_name"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Actions -->
+    <record id="action_construction_equipment_allocation" model="ir.actions.act_window">
+        <field name="name">Equipment Allocations</field>
+        <field name="res_model">construction.equipment.allocation</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first equipment allocation!
+            </p>
+            <p>
+                Allocate construction equipment to projects and track their usage and costs.
+            </p>
+        </field>
+    </record>
+
+    <record id="action_construction_equipment_usage" model="ir.actions.act_window">
+        <field name="name">Equipment Usage Logs</field>
+        <field name="res_model">construction.equipment.usage</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No usage logs yet!
+            </p>
+            <p>
+                Track daily equipment usage, fuel consumption, and operator details.
+            </p>
+        </field>
+    </record>
+
+    <record id="action_construction_equipment_maintenance" model="ir.actions.act_window">
+        <field name="name">Equipment Maintenance</field>
+        <field name="res_model">construction.equipment.maintenance</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No maintenance logs yet!
+            </p>
+            <p>
+                Track equipment maintenance activities, costs, and schedules.
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu Items -->
+    <menuitem id="construction_plant_machinery_menu"
+              name="Plant &amp; Machinery"
+              parent="construction_menu_root"
+              sequence="60"/>
+
+    <menuitem id="construction_equipment_allocation_menu"
+              name="Equipment Allocations"
+              parent="construction_plant_machinery_menu"
+              action="action_construction_equipment_allocation"
+              sequence="10"/>
+
+    <menuitem id="construction_equipment_usage_menu"
+              name="Usage Logs"
+              parent="construction_plant_machinery_menu"
+              action="action_construction_equipment_usage"
+              sequence="20"/>
+
+    <menuitem id="construction_equipment_maintenance_menu"
+              name="Maintenance Logs"
+              parent="construction_plant_machinery_menu"
+              action="action_construction_equipment_maintenance"
+              sequence="30"/>
+
+    <!-- Update Project Form to show Equipment tab -->
+    <record id="view_construction_project_form_equipment" model="ir.ui.view">
+        <field name="name">construction.project.form.equipment</field>
+        <field name="model">construction.project</field>
+        <field name="inherit_id" ref="construction_management.view_construction_project_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Equipment &amp; Machinery">
+                    <field name="equipment_allocation_ids">
+                        <list>
+                            <field name="name"/>
+                            <field name="equipment_id"/>
+                            <field name="category"/>
+                            <field name="construction_task_id" domain="[('project_id', '=', project_id)]"/>
+                            <field name="allocation_date"/>
+                            <field name="return_date"/>
+                            <field name="total_days"/>
+                            <field name="total_cost"/>
+                            <field name="state"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

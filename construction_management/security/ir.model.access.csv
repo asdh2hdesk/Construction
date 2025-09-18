@@ -1,0 +1,21 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_construction_dpr,construction.dpr,model_construction_dpr,base.group_user,1,1,1,1
+access_construction_dpr_material,construction.dpr.material,model_construction_dpr_material,base.group_user,1,1,1,1
+access_construction_project,construction.project,model_construction_project,base.group_user,1,1,1,1
+access_construction_boq,construction.boq,model_construction_boq,base.group_user,1,1,1,1
+access_construction_progress,construction.progress,model_construction_progress,base.group_user,1,1,1,1
+access_construction_quality,construction.quality,model_construction_quality,base.group_user,1,1,1,1
+access_construction_equipment_allocation,construction.equipment.allocation,model_construction_equipment_allocation,base.group_user,1,1,1,1
+access_construction_equipment_usage,construction.equipment.usage,model_construction_equipment_usage,base.group_user,1,1,1,1
+access_construction_equipment_maintenance,construction.equipment.maintenance,model_construction_equipment_maintenance,base.group_user,1,1,1,1
+access_construction_equipment_allocation_manager,construction.equipment.allocation.manager,model_construction_equipment_allocation,base.group_system,1,1,1,1
+access_construction_equipment_usage_manager,construction.equipment.usage.manager,model_construction_equipment_usage,base.group_system,1,1,1,1
+access_construction_equipment_maintenance_manager,construction.equipment.maintenance.manager,model_construction_equipment_maintenance,base.group_system,1,1,1,1
+access_construction_employee_work_user,construction.employee.work user,model_construction_employee_work,base.group_user,1,1,1,1
+access_construction_employee_work_manager,construction.employee.work manager,model_construction_employee_work,base.group_system,1,1,1,1
+access_project_task_simple,project.task.simple,model_project_task_simple,base.group_user,1,1,1,1
+access_construction_inventory_user,access.construction.inventory.user,model_construction_inventory,base.group_user,1,1,1,0
+access_construction_inventory_manager,access.construction.inventory.manager,model_construction_inventory,base.group_system,1,1,1,1
+access_construction_dashboard_service,access.construction.dashboard.service,model_construction_dashboard_service,base.group_user,1,0,0,0
+access_construction_dashboard_service,access_construction_dashboard_service,model_construction_dashboard_service,base.group_user,1,1,1,1
+

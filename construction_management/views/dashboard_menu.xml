@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Action -->
+    <record id="action_construction_dashboard" model="ir.actions.client">
+        <field name="name">Construction Dashboard</field>
+        <field name="tag">construction_dashboard.client_action</field>
+    </record>
+
+<!--    &lt;!&ndash; Menu Item &ndash;&gt;-->
+<!--    <menuitem id="menu_construction_root"-->
+<!--              name="Construction"-->
+<!--              sequence="10"/>-->
+
+    <menuitem id="menu_construction_dashboard"
+              name="Dashboard"
+              parent="construction_menu_root"
+              action="action_construction_dashboard"
+              sequence="10"/>
+</odoo>

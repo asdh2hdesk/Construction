@@ -1,0 +1,269 @@
+.o_action_manager {
+    overflow-y: auto !important;
+}
+
+.o_construction_dashboard {
+    background: url('/construction_management/static/src/img/dashboard_bg.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: black;
+}
+.o_construction_dashboard::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(253, 186, 116, 0.3) 0%, transparent 50%),  /* light orange */
+        radial-gradient(circle at 80% 20%, rgba(134, 239, 172, 0.25) 0%, transparent 50%), /* light green */
+        radial-gradient(circle at 40% 40%, rgba(255, 213, 128, 0.25) 0%, transparent 50%); /* pale golden */
+    animation: float 20s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
+    33% { transform: translate(30px, -30px) rotate(120deg); }
+    66% { transform: translate(-20px, 20px) rotate(240deg); }
+}
+
+.o_dashboard_header {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+    padding: 32px 48px;
+    margin-bottom: 32px;
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-title {
+    color: black;
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 0;
+    text-align: center;
+}
+
+/* Loading State */
+.o_loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    font-size: 1.2rem;
+    color: #95a5a6;
+}
+
+/* KPI Cards */
+.o_construction_kpis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.kpi {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.kpi::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #e74c3c, #f39c12, #2ecc71);
+    border-radius: 12px 12px 0 0;
+}
+
+.kpi:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.kpi strong {
+    display: block;
+    font-size: 0.85rem;
+    color: #bdc3c7;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+.kpi strong + * {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ecf0f1;
+    line-height: 1.2;
+}
+
+/* Chart Container Grid */
+.o_construction_main_content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.chart-container {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.chart-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top right, rgba(52, 152, 219, 0.1), transparent 50%);
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.chart-container:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.chart-container canvas {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 300px;
+    border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .o_construction_kpis {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    
+    .o_construction_main_content {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .o_construction_dashboard {
+        padding: 15px;
+    }
+    
+    .dashboard-title {
+        font-size: 1.5rem;
+    }
+    
+    .o_construction_kpis {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .o_construction_main_content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .kpi {
+        padding: 15px;
+    }
+    
+    .chart-container {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .o_construction_dashboard {
+        padding: 10px;
+    }
+    
+    .kpi strong + * {
+        font-size: 1.5rem;
+    }
+    
+    .chart-container {
+        padding: 15px;
+    }
+}
+
+/* Enhanced Visual Effects */
+.kpi:nth-child(4n+1)::before {
+    background: linear-gradient(90deg, #3498db, #9b59b6);
+}
+
+.kpi:nth-child(4n+2)::before {
+    background: linear-gradient(90deg, #e74c3c, #f39c12);
+}
+
+.kpi:nth-child(4n+3)::before {
+    background: linear-gradient(90deg, #2ecc71, #1abc9c);
+}
+
+.kpi:nth-child(4n+4)::before {
+    background: linear-gradient(90deg, #f39c12, #e67e22);
+}
+
+/* Animation for loading */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.kpi, .chart-container {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.kpi:nth-child(even) {
+    animation-delay: 0.1s;
+}
+
+.chart-container:nth-child(even) {
+    animation-delay: 0.2s;
+}

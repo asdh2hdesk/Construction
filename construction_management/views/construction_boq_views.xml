@@ -1,0 +1,47 @@
+<odoo>
+    <record id="action_construction_boq" model="ir.actions.act_window">
+        <field name="name">BOQ Items</field>
+        <field name="res_model">construction.boq</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <record id="view_construction_boq_tree" model="ir.ui.view">
+        <field name="name">construction.boq.tree</field>
+        <field name="model">construction.boq</field>
+        <field name="arch" type="xml">
+            <list string="BOQ Items">
+                <field name="name"/>
+                <field name="project_id"/>
+                <field name="quantity"/>
+                <field name="unit"/>
+                <field name="unit_price"/>
+                <field name="total_price"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_construction_boq_form" model="ir.ui.view">
+        <field name="name">construction.boq.form</field>
+        <field name="model">construction.boq</field>
+        <field name="arch" type="xml">
+            <form string="BOQ Item">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="project_id"/>
+                        <field name="parent_id" domain="[('project_id', '=', project_id)]"/>
+                        <field name="material_id"/>
+                        <field name="quantity"/>
+                        <field name="unit"/>
+                        <field name="unit_price"/>
+                        <field name="total_price"/>
+<!--                        <field name="labor_hours"/>-->
+<!--                        <field name="labor_cost"/>-->
+                    </group>
+                    <field name="child_ids"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <menuitem id="construction_boq_menu" name="BOQ" parent="construction_menu_root" action="action_construction_boq" sequence="30"/>
+</odoo>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="construction.ProjectDashboard">
+        <div class="o_project_dashboard">
+            <!-- Header -->
+            <div class="o_dashboard_header d-flex justify-content-between align-items-center mb-3">
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-secondary me-3" t-on-click="backToProjects">
+                        <i class="fa fa-arrow-left"></i> Back to Projects
+                    </button>
+                    <h2 class="dashboard-title mb-0">
+                        <t t-if="state.kpis.projectName">
+                            <t t-esc="state.kpis.projectName"/> Dashboard
+                        </t>
+                        <t t-else="">Project Dashboard</t>
+                    </h2>
+                </div>
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-primary me-2" t-on-click="refreshDashboard">
+                        <i class="fa fa-refresh"></i> Refresh
+                    </button>
+                    <button class="btn btn-info" t-on-click="openProjectForm">
+                        <i class="fa fa-edit"></i> Edit Project
+                    </button>
+                </div>
+            </div>
+
+            <t t-if="state.loading">
+                <div class="o_loader">Loading project dashboard...</div>
+            </t>
+
+            <t t-if="state.error">
+                <div class="alert alert-danger" role="alert">
+                    <i class="fa fa-exclamation-triangle"></i>
+                    <t t-esc="state.error"/>
+                </div>
+            </t>
+
+            <t t-if="!state.loading and !state.error">
+                <!-- Project KPIs -->
+                <div class="o_project_kpis row mb-4">
+                    <div class="col-md-3">
+                        <div class="kpi-card">
+                            <div class="kpi-icon text-primary"><i class="fa fa-percent"></i></div>
+                            <div class="kpi-content">
+                                <div class="kpi-label">Progress</div>
+                                <div class="kpi-value text-primary">
+                                    <t t-esc="state.kpis.progress"/>%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="kpi-card">
+                            <div class="kpi-icon text-success"><i class="fa fa-money"></i></div>
+                            <div class="kpi-content">
+                                <div class="kpi-label">Expected Total Cost</div>
+                                <div class="kpi-value text-success">
+                                    ₹<t t-esc="state.kpis.etotalCost?.toLocaleString() || '0'"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="kpi-card">
+                            <div class="kpi-icon text-warning"><i class="fa fa-calculator"></i></div>
+                            <div class="kpi-content">
+                                <div class="kpi-label">Actual Total Cost</div>
+                                <div class="kpi-value text-warning">
+                                    ₹<t t-esc="state.kpis.totalCost?.toLocaleString() || '0'"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="kpi-card">
+                            <div class="kpi-icon text-info"><i class="fa fa-tasks"></i></div>
+                            <div class="kpi-content">
+                                <div class="kpi-label">Task Completion</div>
+                                <div class="kpi-value text-info">
+                                    <t t-esc="state.kpis.taskCompletionRate || 0"/>%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary KPIs -->
+                <div class="o_project_secondary_kpis row mb-4">
+                    <div class="col-md-2">
+                        <div class="small-kpi">
+                            <div class="small-kpi-label">Total Tasks</div>
+                            <div class="small-kpi-value"><t t-esc="state.kpis.totalTasks || 0"/></div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="small-kpi">
+                            <div class="small-kpi-label">Completed</div>
+                            <div class="small-kpi-value text-success"><t t-esc="state.kpis.completedTasks || 0"/></div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="small-kpi">
+                            <div class="small-kpi-label">In Progress</div>
+                            <div class="small-kpi-value text-warning"><t t-esc="state.kpis.activeTasks || 0"/></div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="small-kpi">
+                            <div class="small-kpi-label">BOQ Items</div>
+                            <div class="small-kpi-value"><t t-esc="state.kpis.totalBOQItems || 0"/></div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="small-kpi">
+                            <div class="small-kpi-label">DPRs</div>
+                            <div class="small-kpi-value"><t t-esc="state.kpis.totalDPRs || 0"/></div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="small-kpi">
+                            <div class="small-kpi-label">Cost Variance</div>
+                            <div class="small-kpi-value"
+                                 t-att-class="state.kpis.costVariance >= 0 ? 'text-success' : 'text-danger'">
+                                <t t-esc="state.kpis.costVariance || 0"/>%
+<!--                                <t t-esc="state.kpis.costVarianceMsg"/>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Info -->
+<!--                <div class="row mb-4">-->
+<!--                    <div class="col-md-12">-->
+<!--                        <div class="project-info-card">-->
+<!--                            <h5>Project Information</h5>-->
+<!--                            <div class="row">-->
+<!--                                <div class="col-md-3">-->
+<!--                                    <strong>Status:</strong>-->
+<!--                                    <span class="badge"-->
+<!--                                          t-att-class="'badge-' + (state.kpis.status === 'active' ? 'success' :-->
+<!--                                                                  state.kpis.status === 'completed' ? 'primary' : 'secondary')">-->
+<!--                                        <t t-esc="state.kpis.status"/>-->
+<!--                                    </span>-->
+<!--                                </div>-->
+<!--                                <div class="col-md-3" t-if="state.kpis.startDate">-->
+<!--                                    <strong>Start Date:</strong> <t t-esc="state.kpis.startDate"/>-->
+<!--                                </div>-->
+<!--                                <div class="col-md-3" t-if="state.kpis.endDate">-->
+<!--                                    <strong>End Date:</strong> <t t-esc="state.kpis.endDate"/>-->
+<!--                                </div>-->
+<!--                                <div class="col-md-3" t-if="state.kpis.expectedEndDate">-->
+<!--                                    <strong>Expected End:</strong> <t t-esc="state.kpis.expectedEndDate"/>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+                <!-- Charts Row 1 -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="chart-container">
+                            <canvas id="projectTaskProgressChart" width="400" height="300"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="chart-container">
+                            <canvas id="projectMonthlyProgressChart" width="400" height="300"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Row 2 -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="chart-container">
+                            <canvas id="projectCostComparisonChart" width="400" height="300"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="chart-container">
+                            <canvas id="projectMaterialConsumptionChart" width="400" height="300"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Row 3 -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="chart-container">
+                            <canvas id="projectCostBreakdownChart" width="400" height="300"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="chart-container">
+                            <canvas id="projectLaborUtilizationChart" width="400" height="300"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activities -->
+                <div class="row mb-4" t-if="state.recentActivities and state.recentActivities.length">
+                    <div class="col-md-12">
+                        <div class="activities-card">
+                            <h5>Recent Activities</h5>
+                            <div class="activity-list">
+                                <t t-foreach="state.recentActivities" t-as="activity" t-key="activity_index">
+                                    <div class="activity-item">
+                                        <div class="activity-icon">
+                                            <i t-att-class="'fa fa-' + (activity.type === 'DPR' ? 'file-text' : activity.type === 'Quality' ? 'check-circle' : 'info-circle')"></i>
+                                        </div>
+                                        <div class="activity-content">
+                                            <div class="activity-title">
+                                                <strong><t t-esc="activity.title"/></strong>
+                                            </div>
+                                            <div class="activity-description">
+                                                <t t-esc="activity.description"/>
+                                            </div>
+                                            <div class="activity-date text-muted">
+                                                <small><t t-esc="activity.date"/></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </div>
+    </t>
+</templates>

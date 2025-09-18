@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Task Form View - Fixed for Odoo 18 -->
+    <record id="view_project_task_simple_form" model="ir.ui.view">
+        <field name="name">project.task.simple.form</field>
+        <field name="model">project.task.simple</field>
+        <field name="arch" type="xml">
+            <form string="Task">
+                <header>
+                    <button name="action_add_subtask" type="object" string="Add Subtask"
+                            class="oe_highlight" icon="fa-plus"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Task Name..."/>
+                        </h1>
+                        <div class="o_row">
+                            <field name="parent_id" placeholder="Parent Task"
+                                   domain="[('project_id', '=', project_id), ('id', '!=', id)]"/>
+                        </div>
+                    </div>
+
+                    <group>
+                        <group>
+                            <field name="project_id"/>
+                            <field name="assigned_to"/>
+                            <field name="status"/>
+                        </group>
+                        <group>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="duration" readonly="1"/>
+                            <field name="progress_percent" readonly="child_ids"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                        <page string="Subtasks" invisible="child_ids == []">
+                            <field name="child_ids">
+                                <list editable="bottom">
+                                    <field name="name"/>
+                                    <field name="start_date"/>
+                                    <field name="end_date"/>
+                                    <field name="assigned_to"/>
+                                    <field name="status"/>
+                                    <field name="progress_percent" readonly="child_ids"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Task Tree View - Fixed for Odoo 18 -->
+    <record id="view_project_task_simple_tree" model="ir.ui.view">
+        <field name="name">project.task.simple.tree</field>
+        <field name="model">project.task.simple</field>
+        <field name="arch" type="xml">
+            <list editable="bottom" expand="1">
+                <field name="sequence" widget="handle"/>
+                <field name="display_name" string="Task Name"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="duration"/>
+                <field name="assigned_to"/>
+                <field name="status"/>
+                <field name="progress_percent" readonly="child_ids"/>
+                <field name="is_subtask" column_invisible="1"/>
+                <button name="action_add_subtask" type="object"
+                        string="Add Subtask" icon="fa-plus"
+                        invisible="is_subtask == True"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_project_task_simple_search" model="ir.ui.view">
+        <field name="name">project.task.simple.search</field>
+        <field name="model">project.task.simple</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="project_id"/>
+                <field name="assigned_to"/>
+                <field name="parent_id"/>
+
+                <filter string="Main Tasks" name="main_tasks"
+                        domain="[('parent_id', '=', False)]"/>
+                <filter string="Subtasks" name="subtasks"
+                        domain="[('parent_id', '!=', False)]"/>
+                <separator/>
+                <filter string="Not Started" name="not_started"
+                        domain="[('status', '=', 'not_started')]"/>
+                <filter string="In Progress" name="in_progress"
+                        domain="[('status', '=', 'in_progress')]"/>
+                <filter string="Completed" name="completed"
+                        domain="[('status', '=', 'completed')]"/>
+
+                <group expand="0" string="Group By">
+                    <filter string="Project" name="group_project"
+                            context="{'group_by': 'project_id'}"/>
+                    <filter string="Status" name="group_status"
+                            context="{'group_by': 'status'}"/>
+                    <filter string="Assigned To" name="group_assigned"
+                            context="{'group_by': 'assigned_to'}"/>
+                    <filter string="Parent Task" name="group_parent"
+                            context="{'group_by': 'parent_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action for Project Tasks -->
+    <record id="action_project_task_simple" model="ir.actions.act_window">
+        <field name="name">Project Timeline</field>
+        <field name="res_model">project.task.simple</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_project_task_simple_search"/>
+        <field name="context">{'search_default_main_tasks': 1}</field>
+    </record>
+
+<!--    &lt;!&ndash; Menu Item &ndash;&gt;-->
+<!--    <menuitem id="construction_simple_timeline_menu"-->
+<!--              name="Timeline"-->
+<!--              parent="construction_projects_menu"-->
+<!--              action="action_project_task_simple"/>-->
+
+    <!-- Project Form Timeline Tab -->
+<!--    <record id="view_construction_project_form_timeline_tab" model="ir.ui.view">-->
+<!--        <field name="name">construction.project.form.timeline.tab</field>-->
+<!--        <field name="model">construction.project</field>-->
+<!--        <field name="inherit_id" ref="construction_management.view_construction_project_form"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//notebook" position="inside">-->
+<!--                <page string="Project Timeline" name="timeline">-->
+<!--                    <field name="timeline_ids" context="{'default_project_id': id}">-->
+<!--                        <list editable="bottom" expand="1">-->
+<!--                            <field name="sequence" widget="handle"/>-->
+<!--                            <field name="display_name" string="Task Name"/>-->
+<!--                            <field name="start_date"/>-->
+<!--                            <field name="end_date"/>-->
+<!--                            <field name="duration"/>-->
+<!--                            <field name="assigned_to"/>-->
+<!--                            <field name="status"/>-->
+<!--                            <field name="progress_percent" readonly="child_ids"/>-->
+<!--                            <field name="is_subtask" column_invisible="1"/>-->
+<!--                            <button name="action_add_subtask" type="object"-->
+<!--                                    string="Add Subtask" icon="fa-plus"-->
+<!--                                    invisible="is_subtask == True"/>-->
+<!--                        </list>-->
+<!--                    </field>-->
+<!--                </page>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+
+</odoo>

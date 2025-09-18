@@ -1,0 +1,51 @@
+<odoo>
+    <record id="view_construction_dpr_tree" model="ir.ui.view">
+        <field name="name">construction.dpr.tree</field>
+        <field name="model">construction.dpr</field>
+        <field name="arch" type="xml">
+            <list string="Daily Progress Reports">
+                <field name="date"/>
+                <field name="project_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_construction_dpr_form" model="ir.ui.view">
+        <field name="name">construction.dpr.form</field>
+        <field name="model">construction.dpr</field>
+        <field name="arch" type="xml">
+            <form string="Daily Progress Report">
+                <sheet>
+                    <group>
+                        <field name="date"/>
+                        <field name="project_id"/>
+                        <field name="summary"/>
+                        <field name="issues"/>
+                        <field name="employee_count"/>
+                        <field name="labor_hours"/>
+                        <field name="working_hours"/>
+                        <field name="per_cost"/>
+                        <field name="attachment_ids" widget="many2many_binary" options="{'accepted_file_extensions': 'image/*'}"/>
+                    </group>
+                    <field name="material_used_ids">
+                        <list editable="bottom">
+                            <field name="product_id"/>
+                            <field name="quantity"/>
+                            <field name="uom_id"/>
+                            <field name="unit_cost"/>
+                            <field name="total_cost"/>
+                            <field name="remarks"/>
+                        </list>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_construction_dpr" model="ir.actions.act_window">
+        <field name="name">Daily Progress Reports</field>
+        <field name="res_model">construction.dpr</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="construction_dpr_menu" name="DPR" parent="construction_menu_root" action="action_construction_dpr" sequence="40"/>
+</odoo>
