@@ -30,12 +30,23 @@ class ConstructionInventory(models.Model):
         ('over_stock', 'Over Stock')
     ], string='Stock Status', compute='_compute_stock_status', store=True)
 
-    boq_ids = fields.One2many('construction.boq', 'material_id', string='BOQ References')
+    boq_ids = fields.One2many(
+        'construction.boq',
+        compute='_compute_boq_ids',
+        string='BOQ References'
+    )
 
-    @api.depends('material_id')
+    @api.depends('material_id', 'project_id')
     def _compute_boq_ids(self):
+        """Get BOQ items that reference this material"""
         for rec in self:
-            rec.boq_ids = self.env['construction.boq'].search([('material_id', '=', rec.material_id.id)])
+            domain = [('material_id', '=', rec.material_id.id)]
+
+            # If project is specified, filter by project
+            if rec.project_id:
+                domain.append(('project_id', '=', rec.project_id.id))
+
+            rec.boq_ids = self.env['construction.boq'].search(domain)
 
     @api.depends('material_id', 'project_id')
     def _compute_total_required(self):
@@ -52,9 +63,6 @@ class ConstructionInventory(models.Model):
 
                 boq_items = self.env['construction.boq'].search(boq_domain)
                 total = sum(boq_items.mapped('quantity'))
-
-                # _logger.info(
-                #     f"Material {rec.material_id.name}: Found {len(boq_items)} BOQ items, total required: {total}")
 
             rec.total_required = total
 
