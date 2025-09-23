@@ -131,36 +131,30 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Project Info -->
-<!--                <div class="row mb-4">-->
-<!--                    <div class="col-md-12">-->
-<!--                        <div class="project-info-card">-->
-<!--                            <h5>Project Information</h5>-->
-<!--                            <div class="row">-->
-<!--                                <div class="col-md-3">-->
-<!--                                    <strong>Status:</strong>-->
-<!--                                    <span class="badge"-->
-<!--                                          t-att-class="'badge-' + (state.kpis.status === 'active' ? 'success' :-->
-<!--                                                                  state.kpis.status === 'completed' ? 'primary' : 'secondary')">-->
-<!--                                        <t t-esc="state.kpis.status"/>-->
-<!--                                    </span>-->
-<!--                                </div>-->
-<!--                                <div class="col-md-3" t-if="state.kpis.startDate">-->
-<!--                                    <strong>Start Date:</strong> <t t-esc="state.kpis.startDate"/>-->
-<!--                                </div>-->
-<!--                                <div class="col-md-3" t-if="state.kpis.endDate">-->
-<!--                                    <strong>End Date:</strong> <t t-esc="state.kpis.endDate"/>-->
-<!--                                </div>-->
-<!--                                <div class="col-md-3" t-if="state.kpis.expectedEndDate">-->
-<!--                                    <strong>Expected End:</strong> <t t-esc="state.kpis.expectedEndDate"/>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-                <!-- Charts Row 1 -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="chart-container">
+                            <canvas id="projectCostComparisonChart" width="400" height="300"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="chart-container">
+                            <canvas id="projectMaterialConsumptionChart" width="400" height="300"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="chart-container">
+                            <canvas id="projectCostBreakdownChart" width="400" height="300"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="chart-container">
+                            <canvas id="projectLaborUtilizationChart" width="400" height="300"></canvas>
+                        </div>
+                    </div>
+                </div>
                 <div class="row mb-4">
                     <div class="col-md-6">
                         <div class="chart-container">
@@ -174,35 +168,6 @@
                     </div>
                 </div>
 
-                <!-- Charts Row 2 -->
-                <div class="row mb-4">
-                    <div class="col-md-6">
-                        <div class="chart-container">
-                            <canvas id="projectCostComparisonChart" width="400" height="300"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="chart-container">
-                            <canvas id="projectMaterialConsumptionChart" width="400" height="300"></canvas>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Charts Row 3 -->
-                <div class="row mb-4">
-                    <div class="col-md-6">
-                        <div class="chart-container">
-                            <canvas id="projectCostBreakdownChart" width="400" height="300"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="chart-container">
-                            <canvas id="projectLaborUtilizationChart" width="400" height="300"></canvas>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Recent Activities -->
                 <div class="row mb-4" t-if="state.recentActivities and state.recentActivities.length">
                     <div class="col-md-12">
                         <div class="activities-card">

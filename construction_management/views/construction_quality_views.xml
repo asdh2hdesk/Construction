@@ -27,6 +27,7 @@
                         <field name="issues_found"/>
                         <field name="corrective_actions"/>
                         <field name="attachment_ids" widget="many2many_binary" options="{'accepted_file_extensions': 'image/*'}"/>
+<!--                        <field name="attachment_ids" widget="image" options="{'size': [64, 64], 'zoom': true, 'preview_image': 'attachment_ids'}"/>-->
                     </group>
                 </sheet>
             </form>

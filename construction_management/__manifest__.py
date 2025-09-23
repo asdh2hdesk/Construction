@@ -4,6 +4,7 @@
     'category': 'Construction',
     'summary': 'Manage construction projects, BOQ, progress billing, DPR, and costs',
     'author': 'Megha',
+    'sequence': '-1001',
     'depends': [
         'base',
         'mail',

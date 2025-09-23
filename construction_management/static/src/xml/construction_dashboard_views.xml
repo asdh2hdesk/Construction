@@ -19,37 +19,33 @@
                             <div class="kpi-value"><t t-esc="state.kpis.totalProjects"/></div>
                         </div>
                     </div>
-                    <div class="kpi" t-on-click="() => this.openModel('construction.inventory')">
-                        <div class="kpi-icon"><i class="fa fa-book"></i></div>
+                    <div class="kpi">
+                        <div class="kpi-icon"><i class="fa fa-money"></i></div>
                         <div class="kpi-content">
-                            <div class="kpi-label">Total Inventory</div>
-                            <div class="kpi-value"><t t-esc="state.kpis.totalinventory"/></div>
+                            <div class="kpi-label">Total Estimated Expenses of Projects</div>
+                            <div class="kpi-value"><t t-esc="state.kpis.totalProjectCosts"/></div>
                         </div>
                     </div>
-                    <div class="kpi" t-on-click="() => this.openModel('construction.employee.work')">
-                        <div class="kpi-icon"><i class="fa fa-book"></i></div>
+                    <div class="kpi">
+                        <div class="kpi-icon"><i class="fa fa-calculator"></i></div>
                         <div class="kpi-content">
-                            <div class="kpi-label">Employees work Records</div>
-                            <div class="kpi-value"><t t-esc="state.kpis.employees"/></div>
+                            <div class="kpi-label">Total Actual Expenses of Projects</div>
+                            <div class="kpi-value"><t t-esc="state.kpis.actualProjectCosts"/></div>
                         </div>
                     </div>
-<!--                    <div class="kpi"><strong>Active Projects:</strong> <t t-esc="state.kpis.activeProjects"/></div>-->
-<!--                    <div class="kpi"><strong>Completed Projects:</strong> <t t-esc="state.kpis.completedProjects"/></div>-->
-<!--                    <div class="kpi"><strong>Total Contract Value:</strong> <t t-esc="state.kpis.totalContractValue"/></div>-->
-<!--                    <div class="kpi"><strong>Total Project Costs:</strong> <t t-esc="state.kpis.totalProjectCosts"/></div>-->
-<!--                    <div class="kpi"><strong>Profit Margin:</strong> <t t-esc="state.kpis.profitMargin"/></div>-->
-<!--                    <div class="kpi"><strong>Overall Progress:</strong> <t t-esc="state.kpis.overallProgress"/></div>-->
-<!--                    <div class="kpi"><strong>Active Employees:</strong> <t t-esc="state.kpis.activeEmployees"/></div>-->
-<!--                    <div class="kpi"><strong>Equipment Utilization:</strong> <t t-esc="state.kpis.equipmentUtilization"/></div>-->
-<!--                    <div class="kpi"><strong>Safety Incidents:</strong> <t t-esc="state.kpis.safetyIncidents"/></div>-->
-<!--                    <div class="kpi"><strong>Pending Invoices:</strong> <t t-esc="state.kpis.pendingInvoices"/></div>-->
-<!--                    <div class="kpi"><strong>Materials On Site:</strong> <t t-esc="state.kpis.materialsOnSite"/></div>-->
+                    <div class="kpi">
+                        <div class="kpi-icon"><i class="fa fa-money"></i></div>
+                        <div class="kpi-content">
+                            <div class="kpi-label">Cost Variance</div>
+                            <div class="kpi-value" t-att-class="state.kpis.varianceCosts >= 0 ? 'text-danger' : 'text-success'">
+                                <t t-esc="state.kpis.varianceCosts || 0"/></div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Charts -->
                 <div class="o_construction_main_content">
                     <div class="chart-container"><canvas id="projectProgressChart" width="400" height="300"></canvas></div>
-                    <div class="chart-container"><canvas id="monthlyProgressChart" width="400" height="300"></canvas></div>
+                    <div class="chart-container"><canvas id="assetsEstimationChart" width="400" height="300"></canvas></div>
                     <div class="chart-container"><canvas id="costComparison" width="400" height="300"></canvas></div>
                     <div class="chart-container"><canvas id="costBreakdownChart" width="400" height="300"></canvas></div>
                     <div class="chart-container"><canvas id="equipmentAllocationChart" width="400" height="300"></canvas></div>

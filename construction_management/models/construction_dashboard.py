@@ -37,10 +37,11 @@ class ConstructionDashboardService(models.AbstractModel):
         """Get both KPIs and chart data for construction dashboard"""
         kpis = {
             "totalProjects": self._safe_count("construction.project"),
-            "totalinventory": self._safe_count("construction.inventory"),
+            # "totalinventory": self._safe_count("construction.inventory"),
             "employees": self._safe_count("construction.employee.work"),
-            # "activeProjects": self._safe_count("construction.project", [('state', '=', 'active')]),
-            # "completedProjects": self._safe_count("construction.project", [('state', '=', 'completed')]),
+            "totalProjectCosts": self._get_total_project_costs(),
+            "actualProjectCosts": self._get_actual_project_costs(),
+            "varianceCosts": self._get_project_cost_variance(),
             # "totalContractValue": self._get_total_contract_value(),
             # "totalProjectCosts": self._get_total_project_costs(),
             # # "profitMargin": self._get_profit_margin(),
@@ -55,11 +56,10 @@ class ConstructionDashboardService(models.AbstractModel):
         chart_data = {
             "projectProgressChart": self._get_project_progress_chart(),
             "costBreakdown": self._get_cost_breakdown(),
-            "monthlyProgress": self._get_monthly_progress(),
             "equipmentAllocation": self._get_equipment_allocation_chart(),
             "laborProductivity": self._get_labor_productivity(),
             "materialConsumption": self._get_material_consumption(),
-            "financialSummary": self._get_financial_summary(),
+            "assetsEstimationChart": self._get_assets_summary(),
             "projectTimeline": self._get_project_timeline(),
             "costComparison": self._get_project_cost_comparison_chart(),
             "inventoryAllocationChart": self._get_inventory_allocation_chart(),
@@ -83,24 +83,30 @@ class ConstructionDashboardService(models.AbstractModel):
         """Get total costs across all projects"""
         try:
             projects = self.env['construction.project'].search([])
-            total = self._safe_sum(projects, 'total_cost')
-            return f"${total:,.2f}" if total else "$0.00"
+            total = self._safe_sum(projects, 'e_total_cost')
+            return f"₹{total:,.2f}" if total else "$0.00"
         except Exception:
             return "$0.00"
 
-    def _get_profit_margin(self):
-        """Calculate overall profit margin percentage"""
+    def _get_actual_project_costs(self):
+        """Get total costs across all projects"""
         try:
             projects = self.env['construction.project'].search([])
-            total_revenue = self._safe_sum(projects, 'contract_value')
-            total_costs = self._safe_sum(projects, 'total_cost')
-
-            if total_revenue > 0:
-                margin = ((total_revenue - total_costs) / total_revenue) * 100
-                return f"{margin:.1f}%"
-            return "0.0%"
+            total = self._safe_sum(projects, 'total_cost')
+            return f"₹{total:,.2f}" if total else "$0.00"
         except Exception:
-            return "0.0%"
+            return "$0.00"
+
+    def _get_project_cost_variance(self):
+        """Calculate total cost variance across all projects"""
+        try:
+            projects = self.env['construction.project'].search([])
+            total_estimated = self._safe_sum(projects, 'e_total_cost')  # Estimated cost
+            total_actual = self._safe_sum(projects, 'total_cost')  # Actual cost
+            variance_percentage = round(((total_actual - total_estimated) / total_estimated) * 100, 1)
+            return f"₹{abs(variance_percentage):,.2f}%" if variance_percentage else "₹0.00"
+        except Exception:
+            return "₹0.00"
 
     def _get_overall_progress(self):
         """Get weighted average progress of all active projects"""
@@ -159,61 +165,6 @@ class ConstructionDashboardService(models.AbstractModel):
                 "labels": ["Project A", "Project B"],
                 "data": [100, 150],
             }
-
-    def _get_active_employees(self):
-        """Get count of employees working on projects this month"""
-        try:
-            current_month = datetime.now().replace(day=1)
-            next_month = (current_month.replace(month=current_month.month + 1)
-                          if current_month.month < 12
-                          else current_month.replace(year=current_month.year + 1, month=1))
-
-            active_work = self.env['construction.employee.work'].search([
-                ('work_date', '>=', current_month),
-                ('work_date', '<', next_month),
-                ('state', 'in', ['confirmed', 'approved'])
-            ])
-
-            unique_employees = len(set(active_work.mapped('employee_id.id')))
-            return unique_employees
-        except Exception:
-            return 0
-
-    def _get_equipment_utilization(self):
-        """Get equipment utilization percentage"""
-        try:
-            total_equipment = self.env['maintenance.equipment'].search_count([])
-            if total_equipment == 0:
-                return "0%"
-
-            allocated_equipment = self.env['construction.equipment.allocation'].search_count([
-                ('state', 'in', ['allocated', 'in_use'])
-            ])
-
-            utilization = (allocated_equipment / total_equipment) * 100
-            return f"{utilization:.1f}%"
-        except Exception:
-            return "0%"
-
-    def _get_pending_invoices(self):
-        """Get count of pending invoices"""
-        try:
-            return self.env['account.move'].search_count([
-                ('construction_project_id', '!=', False),
-                ('state', '=', 'draft'),
-                ('move_type', '=', 'out_invoice')
-            ])
-        except Exception:
-            return 0
-
-    def _get_materials_on_site(self):
-        """Get total value of materials on construction sites"""
-        try:
-            inventory_records = self.env['construction.inventory'].search([])
-            total_value = self._safe_sum(inventory_records, 'total_value')
-            return f"${total_value:,.2f}" if total_value else "$0.00"
-        except Exception:
-            return "$0.00"
 
     def _get_project_progress_chart(self):
         """Get progress data for all active projects"""
@@ -557,6 +508,35 @@ class ConstructionDashboardService(models.AbstractModel):
                 'collectionProgress': 83.3,
             }
 
+    def _get_assets_summary(self):
+        """Get actual vs expected asset estimation costs"""
+        try:
+            projects = self.env['construction.project'].search([])
+
+            actual = {
+                'material': sum(projects.mapped('material_cost')),
+                'labor': sum(projects.mapped('labor_cost')),
+                'equipment': sum(projects.mapped('equipment_cost')),
+                'total': sum(projects.mapped('total_cost')),
+            }
+            expected = {
+                'material': sum(projects.mapped('e_material_cost')),
+                'labor': sum(projects.mapped('e_labor_cost')),
+                'equipment': sum(projects.mapped('e_equipment_cost')),
+                'total': sum(projects.mapped('e_total_cost')),
+            }
+
+            return {
+                'actual': actual,
+                'expected': expected
+            }
+        except Exception as e:
+            _logger.error(f"Error in _get_assets_summary: {e}")
+            return {
+                'actual': {'material': 0, 'labor': 0, 'equipment': 0, 'total': 0},
+                'expected': {'material': 0, 'labor': 0, 'equipment': 0, 'total': 0},
+            }
+
     def _get_project_timeline(self):
         """Get upcoming project milestones and deadlines"""
         try:
@@ -603,6 +583,7 @@ class ConstructionDashboardService(models.AbstractModel):
                  'daysRemaining': 5, 'progress': 80, 'status': 'in_progress', 'isOverdue': False},
             ]
 
+    #Individual Dashboard
     @api.model
     def get_project_dashboard_data(self, project_id):
         """Get comprehensive dashboard data for a specific project"""
