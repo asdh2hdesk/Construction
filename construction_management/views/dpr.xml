@@ -31,7 +31,7 @@
                         <list editable="bottom">
                             <field name="product_id"/>
                             <field name="quantity"/>
-                            <field name="uom_id"/>
+                            <field name="unit"/>
                             <field name="unit_cost"/>
                             <field name="total_cost"/>
                             <field name="remarks"/>

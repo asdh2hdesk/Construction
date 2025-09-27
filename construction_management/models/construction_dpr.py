@@ -50,8 +50,10 @@ class ConstructionDPRMaterial(models.Model):
     dpr_id = fields.Many2one('construction.dpr', string='DPR')
     product_id = fields.Many2one('product.product', string='Material')
     quantity = fields.Float(string='Quantity')
-    uom_id = fields.Many2one('uom.uom', string='Unit of Measure', related='product_id.uom_id', readonly=True)
-    unit_cost = fields.Float(string='Unit Cost', related='product_id.standard_price', readonly=True)
+    # uom_id = fields.Many2one('uom.uom', string='Unit of Measure', related='product_id.uom_id', readonly=True)
+    unit = fields.Char(string='Unit of Measure')
+    # unit_cost = fields.Float(string='Unit Cost', related='product_id.standard_price', readonly=True)
+    unit_cost = fields.Float(string='Unit Cost')
     total_cost = fields.Float(string='Total Cost', compute='_compute_total_cost', store=True)
     remarks = fields.Text(string='Remarks')
 
