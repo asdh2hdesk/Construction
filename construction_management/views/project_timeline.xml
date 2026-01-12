@@ -6,15 +6,8 @@
         <field name="model">project.task.simple</field>
         <field name="arch" type="xml">
             <form string="Task">
-                <header>
-                    <button name="action_add_subtask" type="object" string="Add Subtask"
-                            class="oe_highlight" icon="fa-plus"/>
-                </header>
                 <sheet>
                     <div class="oe_title">
-                        <h1>
-                            <field name="name" placeholder="Task Name..."/>
-                        </h1>
                         <div class="o_row">
                             <field name="parent_id" placeholder="Parent Task"
                                    domain="[('project_id', '=', project_id), ('id', '!=', id)]"/>
@@ -36,9 +29,6 @@
                     </group>
 
                     <notebook>
-                        <page string="Description">
-                            <field name="description"/>
-                        </page>
                         <page string="Subtasks" invisible="child_ids == []">
                             <field name="child_ids">
                                 <list editable="bottom">
@@ -53,11 +43,6 @@
                         </page>
                     </notebook>
                 </sheet>
-                <div class="oe_chatter">
-                    <field name="message_follower_ids"/>
-                    <field name="activity_ids"/>
-                    <field name="message_ids"/>
-                </div>
             </form>
         </field>
     </record>
@@ -70,6 +55,7 @@
             <list editable="bottom" expand="1">
                 <field name="sequence" widget="handle"/>
                 <field name="display_name" string="Task Name"/>
+                <field name="name" string="Subtask Name"/>
                 <field name="start_date"/>
                 <field name="end_date"/>
                 <field name="duration"/>
@@ -77,9 +63,9 @@
                 <field name="status"/>
                 <field name="progress_percent" readonly="child_ids"/>
                 <field name="is_subtask" column_invisible="1"/>
-                <button name="action_add_subtask" type="object"
-                        string="Add Subtask" icon="fa-plus"
-                        invisible="is_subtask == True"/>
+<!--                <button name="action_add_subtask" type="object"-->
+<!--                        string="Add Subtask" icon="fa-plus"-->
+<!--                        invisible="is_subtask == True"/>-->
             </list>
         </field>
     </record>

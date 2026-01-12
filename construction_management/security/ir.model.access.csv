@@ -19,3 +19,8 @@ access_construction_inventory_manager,access.construction.inventory.manager,mode
 access_construction_dashboard_service,access.construction.dashboard.service,model_construction_dashboard_service,base.group_user,1,0,0,0
 access_construction_dashboard_service,access_construction_dashboard_service,model_construction_dashboard_service,base.group_user,1,1,1,1
 
+access_construction_quotation_user,construction.quotation.user,model_construction_quotation,base.group_user,1,1,1,0
+access_construction_quotation_manager,construction.quotation.manager,model_construction_quotation,base.group_system,1,1,1,1
+access_construction_quotation_line_user,construction.quotation.line.user,model_construction_quotation_line,base.group_user,1,1,1,1
+access_construction_quotation_line_manager,construction.quotation.line.manager,model_construction_quotation_line,base.group_system,1,1,1,1
+

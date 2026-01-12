@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Report Action -->
+    <record id="action_report_construction_quotation" model="ir.actions.report">
+        <field name="name">Construction Quotation</field>
+        <field name="model">construction.quotation</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">construction_management.report_quotation_document</field>
+        <field name="report_file">construction_management.report_quotation_document</field>
+        <field name="binding_model_id" ref="model_construction_quotation"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- Report Template -->
+    <template id="report_quotation_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+
+                        <!-- Header -->
+                        <div class="row">
+                            <div class="col-6">
+                                <h2>Quotation</h2>
+                                <p>
+                                    <strong>Quotation #:</strong> <span t-field="doc.name"/><br/>
+                                    <strong>Date:</strong> <span t-field="doc.date_quotation"/><br/>
+                                    <strong>Valid Until:</strong> <span t-field="doc.validity_date"/>
+                                </p>
+                            </div>
+                            <div class="col-6 text-end">
+                                <h3>Client Information</h3>
+                                <p>
+                                    <strong><span t-field="doc.partner_id.name"/></strong><br/>
+                                    <span t-field="doc.partner_id.street"/><br/>
+                                    <span t-field="doc.partner_id.city"/>, <span t-field="doc.partner_id.zip"/><br/>
+                                    <span t-field="doc.partner_id.country_id.name"/>
+                                </p>
+                            </div>
+                        </div>
+
+                        <hr/>
+
+                        <!-- Quotation Lines -->
+                        <h3>Quotation Details</h3>
+                        <table class="table table-sm table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Work Type</th>
+                                    <th>Description</th>
+                                    <th class="text-end">Quantity</th>
+                                    <th>Unit</th>
+                                    <th class="text-end">Material Cost</th>
+                                    <th class="text-end">Labor Cost</th>
+                                    <th class="text-end">Equipment</th>
+                                    <th class="text-end">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="doc.line_ids" t-as="line">
+                                    <td><span t-field="line.work_type"/></td>
+                                    <td><span t-field="line.description"/></td>
+                                    <td class="text-end"><span t-field="line.quantity"/></td>
+                                    <td><span t-field="line.unit"/></td>
+                                    <td class="text-end">
+                                        <span t-field="line.material_cost"
+                                              t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                    </td>
+                                    <td class="text-end">
+                                        <span t-field="line.labor_cost"
+                                              t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                    </td>
+                                    <td class="text-end">
+                                        <span t-field="line.equipment_cost"
+                                              t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                    </td>
+                                    <td class="text-end">
+                                        <span t-field="line.line_total"
+                                              t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Totals -->
+                        <div class="row mt-4">
+                            <div class="col-6 offset-6">
+                                <table class="table table-sm">
+                                    <tr>
+                                        <td><strong>Material Total:</strong></td>
+                                        <td class="text-end">
+                                            <span t-field="doc.material_total"
+                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Labor Total:</strong></td>
+                                        <td class="text-end">
+                                            <span t-field="doc.labor_total"
+                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Equipment Total:</strong></td>
+                                        <td class="text-end">
+                                            <span t-field="doc.equipment_total"
+                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Transport Cost:</strong></td>
+                                        <td class="text-end">
+                                            <span t-field="doc.transport_cost"
+                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Subtotal:</strong></td>
+                                        <td class="text-end">
+                                            <span t-field="doc.subtotal"
+                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Margin (<span t-field="doc.margin_percent"/>%):</strong></td>
+                                        <td class="text-end">
+                                            <span t-field="doc.margin_amount"
+                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>VAT (<span t-field="doc.vat_percent"/>%):</strong></td>
+                                        <td class="text-end">
+                                            <span t-field="doc.vat_amount"
+                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-top">
+                                        <td><strong>TOTAL:</strong></td>
+                                        <td class="text-end">
+                                            <strong>
+                                                <span t-field="doc.total_amount"
+                                                      t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Terms and Conditions -->
+                        <div class="mt-4" t-if="doc.notes">
+                            <h4>Terms &amp; Conditions</h4>
+                            <p t-field="doc.notes"/>
+                        </div>
+
+                        <div class="oe_structure"/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

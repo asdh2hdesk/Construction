@@ -29,7 +29,9 @@
         'views/employee.xml',
         'views/project_timeline.xml',
         'views/construction_inventory.xml',
-        'views/dashboard_menu.xml'
+        'views/dashboard_menu.xml',
+        'views/construction_quotation_views.xml',
+        'views/construction_quotation_report.xml'
     ],
     'assets': {
             'web.assets_backend': [

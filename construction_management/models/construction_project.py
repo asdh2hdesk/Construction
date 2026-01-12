@@ -9,7 +9,12 @@ class ConstructionProject(models.Model):
 
     name = fields.Char(string='Project Name', required=True, tracking=True)
     contract_value = fields.Monetary(string='Contract Value', tracking=True)
-    currency_id = fields.Many2one('res.currency', string='Currency', default=lambda self: self.env.company.currency_id)
+    currency_id = fields.Many2one(
+        'res.currency',
+        string='Currency',
+        default=lambda self: self.env.company.currency_id,
+        required=True
+    )
 
     material_cost = fields.Monetary(string='Material Cost', compute='_compute_material_cost', store=True)
     labor_cost = fields.Monetary(string='Labor Cost', compute='_compute_labor_cost', store=True)
@@ -259,8 +264,8 @@ class ProjectTask(models.Model):
     _parent_store = True  # Enable hierarchical structure with better performance
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    name = fields.Char(string='Task Name', required=True)
-    project_id = fields.Many2one('construction.project', string='Project', required=True,
+    name = fields.Char(string='Task Name')
+    project_id = fields.Many2one('construction.project', string='Project',
                                  domain="[('state', '!=', 'cancelled')]")
     sequence = fields.Integer(string='Order', default=10)
 
@@ -270,7 +275,7 @@ class ProjectTask(models.Model):
     parent_path = fields.Char(index=True)  # For _parent_store functionality
 
     # Display name with indentation for hierarchy
-    display_name = fields.Char(compute='_compute_display_name', store=True)
+    display_name = fields.Char(store=True)
     level = fields.Integer(compute='_compute_level', store=True, string='Level')
 
     # Task type to differentiate main tasks from subtasks
@@ -317,11 +322,11 @@ class ProjectTask(models.Model):
         for task in self:
             task.level = len(task.parent_path.split('/')) - 2 if task.parent_path else 0
 
-    @api.depends('name', 'level')
-    def _compute_display_name(self):
-        for task in self:
-            indent = '    ' * task.level  # 4 spaces per level
-            task.display_name = f"{indent}{task.name}"
+    # @api.depends('name', 'level')
+    # def _compute_display_name(self):
+    #     for task in self:
+    #         indent = '    ' * task.level  # 4 spaces per level
+    #         task.display_name = f"{indent}{task.name}"
 
     @api.depends('start_date', 'end_date')
     def _compute_duration(self):

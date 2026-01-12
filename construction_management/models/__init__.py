@@ -13,4 +13,4 @@ from . import construction_equipment
 from . import construction_employee
 from . import construction_inventory
 from . import construction_dashboard
-
+from . import construction_quotation

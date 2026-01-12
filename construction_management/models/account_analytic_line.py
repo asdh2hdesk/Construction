@@ -10,7 +10,14 @@ class AccountAnalyticLine(models.Model):
     )
     construction_task_id = fields.Many2one(
         'project.task.simple',
-        string='Task', domain="[('project_id', '=', construction_project_id)]"
+        string='Task',
+        domain="[('project_id', '=', construction_project_id), ('parent_id', '=', False)]"
+    )
+
+    construction_subtask_id = fields.Many2one(
+        'project.task.simple',
+        string='Subtask',
+        domain="[('parent_id', '=', construction_task_id)]"
     )
 
     boq_item_id = fields.Many2one(

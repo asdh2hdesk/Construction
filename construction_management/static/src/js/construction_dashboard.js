@@ -24,19 +24,6 @@ class ConstructionDashboard extends Component {
                 totalProjectCosts: 0,
                 actualProjectCosts: 0,
                 varianceCosts: 0,
-//                employees: 0,
-//                employees: 0,
-//                activeProjects: 0,
-//                completedProjects: 0,
-//                totalContractValue: "$0.00",
-//                totalProjectCosts: "$0.00",
-//                profitMargin: "0%",
-//                overallProgress: "0%",
-//                activeEmployees: 0,
-//                equipmentUtilization: "0%",
-//                safetyIncidents: 0,
-//                pendingInvoices: 0,
-//                materialsOnSite: "$0.00",
             },
             chartData: {},
         });
@@ -121,10 +108,33 @@ class ConstructionDashboard extends Component {
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
-                    title: { display: true, text: 'Project Progress' }
+                    title: {
+                        display: true,
+                        text: 'Project Progress',
+                        font: { size: 14 }
+                    },
+                    legend: {
+                        labels: {
+                            font: { size: 12 }
+                        }
+                    }
                 },
-                scales: { y: { beginAtZero: true, max: 100 } }
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            font: { size: 12 }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: { size: 12 }
+                        }
+                    }
+                }
             }
         });
     }
@@ -150,8 +160,18 @@ class ConstructionDashboard extends Component {
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
-                    title: { display: true, text: 'Cost Breakdown of all the Projects' }
+                    title: {
+                        display: true,
+                        text: 'Cost Breakdown of all the Projects',
+                        font: { size: 14 }
+                    },
+                    legend: {
+                        labels: {
+                            font: { size: 12 }
+                        }
+                    }
                 }
             }
         });
@@ -180,8 +200,30 @@ class ConstructionDashboard extends Component {
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
-                    title: { display: true, text: 'Monthly Progress' }
+                    title: {
+                        display: true,
+                        text: 'Monthly Progress',
+                        font: { size: 14 }
+                    },
+                    legend: {
+                        labels: {
+                            font: { size: 12 }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        ticks: {
+                            font: { size: 12 }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: { size: 12 }
+                        }
+                    }
                 }
             }
         });
@@ -208,8 +250,18 @@ class ConstructionDashboard extends Component {
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
-                    title: { display: true, text: 'Equipment Allocation of all the Projects' }
+                    title: {
+                        display: true,
+                        text: 'Equipment Allocation of all the Projects',
+                        font: { size: 14 }
+                    },
+                    legend: {
+                        labels: {
+                            font: { size: 12 }
+                        }
+                    }
                 }
             }
         });
@@ -246,23 +298,41 @@ class ConstructionDashboard extends Component {
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
-                    title: { display: true, text: 'Total Cost' },
+                    title: {
+                        display: true,
+                        text: 'Total Cost',
+                        font: { size: 14 }
+                    },
+                    legend: {
+                        labels: {
+                            font: { size: 12 }
+                        }
+                    },
                     tooltip: {
                         callbacks: {
                             label: function (context) {
-                                return context.dataset.label + "" + context.raw.toLocaleString();
+                                return context.dataset.label + ": " + context.raw.toLocaleString();
                             }
-                        }
+                        },
+                        titleFont: { size: 12 },
+                        bodyFont: { size: 13 }
                     }
                 },
                 scales: {
                     y: {
                         beginAtZero: true,
                         ticks: {
+                            font: { size: 12 },
                             callback: function (value) {
-                                return "" + value.toLocaleString();
+                                return "₹" + value.toLocaleString();
                             }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: { size: 12 }
                         }
                     }
                 }
@@ -292,14 +362,26 @@ class ConstructionDashboard extends Component {
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
-                    title: { display: true, text: 'Inventory Allocation by Project' },
+                    title: {
+                        display: true,
+                        text: 'Inventory Allocation by Project',
+                        font: { size: 14 }
+                    },
+                    legend: {
+                        labels: {
+                            font: { size: 12 }
+                        }
+                    },
                     tooltip: {
                         callbacks: {
                             label: function(context) {
                                 return context.label + ": " + context.raw.toLocaleString();
                             }
-                        }
+                        },
+                        titleFont: { size: 12 },
+                        bodyFont: { size: 13 }
                     }
                 }
             }
@@ -307,83 +389,84 @@ class ConstructionDashboard extends Component {
     };
 
     renderAssetsEstimationChart = () => {
-    console.log("Attempting to render Assets Estimation Chart...");
+        console.log("Attempting to render Assets Estimation Chart...");
 
-    const canvas = document.getElementById('assetsEstimationChart');
-    console.log("Canvas element:", canvas);
+        const canvas = document.getElementById('assetsEstimationChart');
+        console.log("Canvas element:", canvas);
 
-    if (!canvas) {
-        console.error("Canvas element 'assetsEstimationChart' not found");
-        return;
-    }
-
-    if (!this.state.chartData.assetsEstimationChart) {
-        console.error("Chart data 'assetsEstimationChart' not found:", this.state.chartData);
-        return;
-    }
-
-    const ctx = canvas.getContext('2d');
-    const data = this.state.chartData.assetsEstimationChart;
-
-    console.log("Chart data:", data);
-
-    if (this.assetsEstimationChartInstance) {
-        console.log("Destroying existing chart instance");
-        this.assetsEstimationChartInstance.destroy();
-    }
-
-    this.assetsEstimationChartInstance = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['Material', 'Labor', 'Equipment', 'Total'],
-            datasets: [
-                {
-                    label: 'Expected',
-                    data: [
-                        data.expected.material,
-                        data.expected.labor,
-                        data.expected.equipment,
-                        data.expected.total
-                    ],
-                    borderColor: '#3498db',
-                    backgroundColor: 'rgba(52, 152, 219, 0.2)',
-                    fill: true,
-                    tension: 0.3,
-                },
-//                {
-//                    label: 'Actual',
-//                    data: [
-//                        data.actual.material,
-//                        data.actual.labor,
-//                        data.actual.equipment,
-//                        data.actual.total
-//                    ],
-//                    borderColor: '#2ecc71',
-//                    backgroundColor: 'rgba(46, 204, 113, 0.2)',
-//                    fill: true,
-//                    tension: 0.3,
-//                }
-            ]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                title: {
-                    display: true,
-                    text: 'Assets Estimation Costs'
-                }
-            },
-            scales: {
-                y: { beginAtZero: true }
-            }
+        if (!canvas) {
+            console.error("Canvas element 'assetsEstimationChart' not found");
+            return;
         }
-    });
 
-    console.log("Assets Estimation Chart created successfully");
-};
+        if (!this.state.chartData.assetsEstimationChart) {
+            console.error("Chart data 'assetsEstimationChart' not found:", this.state.chartData);
+            return;
+        }
 
+        const ctx = canvas.getContext('2d');
+        const data = this.state.chartData.assetsEstimationChart;
 
+        console.log("Chart data:", data);
 
+        if (this.assetsEstimationChartInstance) {
+            console.log("Destroying existing chart instance");
+            this.assetsEstimationChartInstance.destroy();
+        }
+
+        this.assetsEstimationChartInstance = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Material', 'Labor', 'Equipment', 'Total'],
+                datasets: [
+                    {
+                        label: 'Expected',
+                        data: [
+                            data.expected.material,
+                            data.expected.labor,
+                            data.expected.equipment,
+                            data.expected.total
+                        ],
+                        borderColor: '#3498db',
+                        backgroundColor: 'rgba(52, 152, 219, 0.2)',
+                        fill: true,
+                        tension: 0.3,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Assets Estimation Costs',
+                        font: { size: 14 }
+                    },
+                    legend: {
+                        labels: {
+                            font: { size: 12 }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            font: { size: 12 }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: { size: 12 }
+                        }
+                    }
+                }
+            }
+        });
+
+        console.log("Assets Estimation Chart created successfully");
+    };
 }
 
 ConstructionDashboard.template = "construction.ConstructionDashboard";
