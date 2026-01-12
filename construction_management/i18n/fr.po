@@ -1,0 +1,2342 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* construction_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-12 11:10+0000\n"
+"PO-Revision-Date: 2026-01-12 11:10+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.report_quotation_document
+msgid ""
+"<br/>\n"
+"                                    <strong>Date:</strong>"
+msgstr ""
+"<br/>\n"
+"                                    <strong>Date:</strong>"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.report_quotation_document
+msgid ""
+"<br/>\n"
+"                                    <strong>Valid Until:</strong>"
+msgstr ""
+"<br/>\n"
+"                                    <strong>Valid Until:</strong>"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.report_quotation_document
+msgid "<strong>Equipment Total:</strong>"
+msgstr "<strong>Equipment Total:</strong>"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.report_quotation_document
+msgid "<strong>Labor Total:</strong>"
+msgstr "<strong>Labor Total:</strong>"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.report_quotation_document
+msgid "<strong>Material Total:</strong>"
+msgstr "<strong>Material Total:</strong>"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.report_quotation_document
+msgid "<strong>Quotation #:</strong>"
+msgstr "<strong>Quotation #:</strong>"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.report_quotation_document
+msgid "<strong>Subtotal:</strong>"
+msgstr "<strong>Subtotal:</strong>"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_quotation_form
+msgid "<strong>Subtotal</strong>"
+msgstr "<strong>Subtotal</strong>"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.report_quotation_document
+msgid "<strong>TOTAL:</strong>"
+msgstr "<strong>TOTAL:</strong>"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_quotation_form
+msgid "<strong>Total</strong>"
+msgstr "<strong>Total</strong>"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.report_quotation_document
+msgid "<strong>Transport Cost:</strong>"
+msgstr "<strong>Transport Cost:</strong>"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__message_needaction
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__message_needaction
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__message_needaction
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__message_needaction
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__message_needaction
+msgid "Action Needed"
+msgstr "Action Needed (Action nécessaire)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_project__state__active
+msgid "Active"
+msgstr "Active (Actif)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__activity_ids
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__activity_ids
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__activity_ids
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__activity_ids
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__activity_ids
+msgid "Activities"
+msgstr "Activities (Activités)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__activity_exception_decoration
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__activity_exception_decoration
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__activity_exception_decoration
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__activity_exception_decoration
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Activity Exception Decoration (Activité Exception Décoration)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__activity_state
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__activity_state
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__activity_state
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__activity_state
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__activity_state
+msgid "Activity State"
+msgstr "Activity State (État d'activité)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__activity_type_icon
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__activity_type_icon
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__activity_type_icon
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__activity_type_icon
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Activity Type Icon (Icône de type d'activité)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__end_date
+msgid "Actual Completion Date"
+msgstr "Actual Completion Date (Date d'achèvement réelle)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__actual_return_date
+msgid "Actual Return Date"
+msgstr "Actual Return Date (Date de retour réelle)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__start_date
+msgid "Actual Start Date"
+msgstr "Actual Start Date (Date de début réelle)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_inventory__stock_status__adequate
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_inventory_search
+msgid "Adequate Stock"
+msgstr "Adequate Stock (Stock adéquat)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__account_payment__payment_type_construction__advance
+msgid "Advance Payment"
+msgstr "Advance Payment (Paiement anticipé)"
+
+#. module: construction_management
+#: model:ir.ui.menu,name:construction_management.construction_projects_submenu
+msgid "All Projects"
+msgstr "All Projects (Tous les projets)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_equipment_allocation_form
+msgid "Allocate"
+msgstr "Allocate (Allouer)"
+
+#. module: construction_management
+#: model_terms:ir.actions.act_window,help:construction_management.action_construction_equipment_allocation
+msgid ""
+"Allocate construction equipment to projects and track their usage and costs."
+msgstr ""
+"Allocate construction equipment to projects and track their usage and costs."
+" (Attribuez des équipements de construction aux projets et suivez leur "
+"utilisation et leurs coûts.)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_equipment_allocation__state__allocated
+msgid "Allocated"
+msgstr "Allocated (Alloué)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_inventory__allocated_qty
+msgid "Allocated Quantity"
+msgstr "Allocated Quantity (Quantité allouée)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_maintenance__allocation_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_usage__allocation_id
+msgid "Allocation"
+msgstr "Allocation (Allocation)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__allocation_date
+msgid "Allocation Date"
+msgstr "Allocation Date (Date d'attribution)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__name
+msgid "Allocation Reference"
+msgstr "Allocation Reference (Référence d'allocation)"
+
+#. module: construction_management
+#: model:ir.model,name:construction_management.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Analytic Line (Ligne analytique)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_form
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_quotation_form
+msgid "Approve"
+msgstr "Approve (Approuver)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_employee_work__state__approved
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_quotation__state__approved
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_search
+msgid "Approved"
+msgstr "Approved (Approuvé)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__approved_by
+msgid "Approved By"
+msgstr "Approved By (Approuvé par)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__approved_date
+msgid "Approved Date"
+msgstr "Approved Date (Date d'approbation)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__assigned_to
+#: model_terms:ir.ui.view,arch_db:construction_management.view_project_task_simple_search
+msgid "Assigned To"
+msgstr "Assigned To (Attribué à)"
+
+#. module: construction_management
+#: model:ir.model.fields,help:construction_management.field_account_analytic_line__image_attachment
+msgid "Attach an image related to this timesheet entry"
+msgstr ""
+"Attach an image related to this timesheet entry (Joindre une image liée à "
+"cette entrée de feuille de temps)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__message_attachment_count
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__message_attachment_count
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__message_attachment_count
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__message_attachment_count
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__message_attachment_count
+msgid "Attachment Count"
+msgstr "Attachment Count (Nombre de pièces jointes)"
+
+#. module: construction_management
+#: model_terms:ir.actions.act_window,help:construction_management.action_construction_quotation
+msgid ""
+"Automatically calculate materials, labor, and costs for construction "
+"projects."
+msgstr ""
+"Automatically calculate materials, labor, and costs for construction "
+"projects. (Calculez automatiquement les matériaux, la main-d'œuvre et les "
+"coûts des projets de construction.)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_inventory__available_qty
+msgid "Available Quantity"
+msgstr "Available Quantity (Quantité disponible)"
+
+#. module: construction_management
+#: model:ir.ui.menu,name:construction_management.construction_boq_menu
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_project_form
+msgid "BOQ"
+msgstr "BOQ (BOQ)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_account_analytic_line__boq_item_id
+#: model:ir.model.fields,field_description:construction_management.field_purchase_order__boq_item_id
+#: model:ir.model.fields,field_description:construction_management.field_stock_move__boq_item_id
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_boq_form
+msgid "BOQ Item"
+msgstr "BOQ Item (Article du BOQ)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_boq__name
+msgid "BOQ Item No."
+msgstr "BOQ Item No. (Numéro d'article du BOQ.)"
+
+#. module: construction_management
+#: model:ir.actions.act_window,name:construction_management.action_construction_boq
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__boq_ids
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_boq_tree
+msgid "BOQ Items"
+msgstr "BOQ Items (Articles du BOQ)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_inventory__boq_ids
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_inventory_form
+msgid "BOQ References"
+msgstr "BOQ References (Références BOQ)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_quotation_line__unit__bag
+msgid "Bag"
+msgstr "Bag (Sac)"
+
+#. module: construction_management
+#: model:ir.model,name:construction_management.model_construction_boq
+msgid "Bill of Quantity"
+msgstr "Bill of Quantity (Devis quantitatif)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_account_bank_statement_line__billing_percentage
+#: model:ir.model.fields,field_description:construction_management.field_account_move__billing_percentage
+msgid "Billing %"
+msgstr "Billing % (Facturation %)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__break_hours
+msgid "Break Hours"
+msgstr "Break Hours (Heures de pause)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_equipment_maintenance__maintenance_type__breakdown
+msgid "Breakdown"
+msgstr "Breakdown (Panne)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_form
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_equipment_allocation_form
+msgid "Cancel"
+msgstr "Cancel (Annuler)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_employee_work__state__cancelled
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_equipment_allocation__state__cancelled
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_project__state__cancelled
+msgid "Cancelled"
+msgstr "Cancelled (Annulé)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_quotation_line__work_type__carpentry
+msgid "Carpentry"
+msgstr "Carpentry (Charpenterie)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__category
+msgid "Category"
+msgstr "Category (Catégorie)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_quotation_line__work_type__ceiling_plaster
+msgid "Ceiling Plaster (Staff)"
+msgstr "Ceiling Plaster (Staff) (Plâtre de plafond (Staff))"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quality__checklist
+msgid "Checklist"
+msgstr "Checklist (Liste de contrôle)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_boq__child_ids
+msgid "Child BOQ Items"
+msgstr "Child BOQ Items (Articles BOQ enfants)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__partner_id
+msgid "Client"
+msgstr "Client (Client)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.report_quotation_document
+msgid "Client Information"
+msgstr "Client Information (Informations client)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_project__state__completed
+#: model:ir.model.fields.selection,name:construction_management.selection__project_task_simple__status__completed
+#: model_terms:ir.ui.view,arch_db:construction_management.view_project_task_simple_search
+msgid "Completed"
+msgstr "Completed (Complété)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_form
+msgid "Confirm"
+msgstr "Confirm (Confirmer)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_employee_work__state__confirmed
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_search
+msgid "Confirmed"
+msgstr "Confirmed (Confirmé)"
+
+#. module: construction_management
+#: model:ir.ui.menu,name:construction_management.construction_menu_root
+msgid "Construction"
+msgstr "Construction (Construction)"
+
+#. module: construction_management
+#: model:ir.actions.client,name:construction_management.action_construction_dashboard
+msgid "Construction Dashboard"
+msgstr "Construction Dashboard (Tableau de bord de construction)"
+
+#. module: construction_management
+#: model:ir.model,name:construction_management.model_construction_dashboard_service
+msgid "Construction Dashboard Service"
+msgstr ""
+"Construction Dashboard Service (Service de tableau de bord de construction)"
+
+#. module: construction_management
+#: model:ir.model,name:construction_management.model_construction_employee_work
+msgid "Construction Employee Work Records"
+msgstr ""
+"Construction Employee Work Records (Dossiers de travail des employés de la "
+"construction)"
+
+#. module: construction_management
+#: model:ir.actions.act_window,name:construction_management.action_construction_inventory
+#: model:ir.model,name:construction_management.model_construction_inventory
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_inventory_form
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_inventory_search
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_inventory_tree
+msgid "Construction Inventory"
+msgstr "Construction Inventory (Inventaire des constructions)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_account_payment__payment_type_construction
+msgid "Construction Payment Type"
+msgstr "Construction Payment Type (Type de paiement pour la construction)"
+
+#. module: construction_management
+#: model:ir.model,name:construction_management.model_construction_progress
+msgid "Construction Progress"
+msgstr "Construction Progress (Avancement des travaux)"
+
+#. module: construction_management
+#: model:ir.model,name:construction_management.model_construction_project
+#: model:ir.model.fields,field_description:construction_management.field_account_bank_statement_line__construction_project_id
+#: model:ir.model.fields,field_description:construction_management.field_account_move__construction_project_id
+#: model:ir.model.fields,field_description:construction_management.field_account_payment__construction_project_id
+#: model:ir.model.fields,field_description:construction_management.field_purchase_order__construction_project_id
+#: model:ir.model.fields,field_description:construction_management.field_stock_move__construction_project_id
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_project_form
+msgid "Construction Project"
+msgstr "Construction Project (Projet de construction)"
+
+#. module: construction_management
+#: model:ir.actions.act_window,name:construction_management.action_construction_project
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_project_tree
+msgid "Construction Projects"
+msgstr "Construction Projects (Projets de construction)"
+
+#. module: construction_management
+#: model:ir.actions.report,name:construction_management.action_report_construction_quotation
+#: model:ir.model,name:construction_management.model_construction_quotation
+msgid "Construction Quotation"
+msgstr "Construction Quotation (Devis de construction)"
+
+#. module: construction_management
+#: model:ir.model,name:construction_management.model_construction_quotation_line
+msgid "Construction Quotation Line"
+msgstr "Construction Quotation Line (Ligne de devis de construction)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__contract_value
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__contract_value
+msgid "Contract Value"
+msgstr "Contract Value (Valeur du contrat)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_equipment_allocation__category__contractual
+msgid "Contractual"
+msgstr "Contractual (Contractuel)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_quotation_form
+msgid "Convert to Project"
+msgstr "Convert to Project (Convertir en projet)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_quotation__state__converted
+msgid "Converted to Project"
+msgstr "Converted to Project (Converti en projet)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_equipment_maintenance__maintenance_type__corrective
+msgid "Corrective"
+msgstr "Corrective (Correctif)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quality__corrective_actions
+msgid "Corrective Actions"
+msgstr "Corrective Actions (Actions correctives)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_usage__cost_for_day
+msgid "Cost for Day"
+msgstr "Cost for Day (Coût par jour)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_crm_lead_form_construction
+msgid "Create Quotation"
+msgstr "Create Quotation (Créer un devis)"
+
+#. module: construction_management
+#: model_terms:ir.actions.act_window,help:construction_management.action_construction_employee_work
+msgid "Create your first employee work record!"
+msgstr ""
+"Create your first employee work record! (Créez votre premier dossier de "
+"travail d'employé !)"
+
+#. module: construction_management
+#: model_terms:ir.actions.act_window,help:construction_management.action_construction_equipment_allocation
+msgid "Create your first equipment allocation!"
+msgstr ""
+"Create your first equipment allocation! (Créez votre première allocation "
+"d'équipement !)"
+
+#. module: construction_management
+#: model_terms:ir.actions.act_window,help:construction_management.action_construction_inventory
+msgid "Create your first inventory record!"
+msgstr ""
+"Create your first inventory record! (Créez votre premier enregistrement "
+"d'inventaire !)"
+
+#. module: construction_management
+#: model_terms:ir.actions.act_window,help:construction_management.action_construction_quotation
+msgid "Create your first quotation"
+msgstr "Create your first quotation (Créez votre premier devis)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_boq__create_uid
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr__create_uid
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr_material__create_uid
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__create_uid
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__create_uid
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_maintenance__create_uid
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_usage__create_uid
+#: model:ir.model.fields,field_description:construction_management.field_construction_inventory__create_uid
+#: model:ir.model.fields,field_description:construction_management.field_construction_progress__create_uid
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__create_uid
+#: model:ir.model.fields,field_description:construction_management.field_construction_quality__create_uid
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__create_uid
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation_line__create_uid
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__create_uid
+msgid "Created by"
+msgstr "Created by (Créé par)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_boq__create_date
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr__create_date
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr_material__create_date
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__create_date
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__create_date
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_maintenance__create_date
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_usage__create_date
+#: model:ir.model.fields,field_description:construction_management.field_construction_inventory__create_date
+#: model:ir.model.fields,field_description:construction_management.field_construction_progress__create_date
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__create_date
+#: model:ir.model.fields,field_description:construction_management.field_construction_quality__create_date
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__create_date
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation_line__create_date
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__create_date
+msgid "Created on"
+msgstr "Created on (Créé le)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr__currency_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__currency_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__currency_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__currency_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation_line__currency_id
+msgid "Currency"
+msgstr "Currency (Devise)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_inventory__current_stock
+msgid "Current Stock"
+msgstr "Current Stock (Stock actuel)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__partner_id
+msgid "Customer"
+msgstr "Customer (Client)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr_material__dpr_id
+#: model:ir.ui.menu,name:construction_management.construction_dpr_menu
+msgid "DPR"
+msgstr "DPR (RPD)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_stock_move__dpr_material_id
+msgid "DPR Material Entry"
+msgstr "DPR Material Entry (Saisie de matériel DPR)"
+
+#. module: construction_management
+#: model:ir.model,name:construction_management.model_construction_dpr
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_dpr_form
+msgid "Daily Progress Report"
+msgstr "Daily Progress Report (Rapport d'avancement quotidien)"
+
+#. module: construction_management
+#: model:ir.actions.act_window,name:construction_management.action_construction_dpr
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_dpr_tree
+msgid "Daily Progress Reports"
+msgstr "Daily Progress Reports (Rapports d'avancement quotidiens)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__daily_rate
+msgid "Daily Rate"
+msgstr "Daily Rate (Tarif journalier)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__dpr_ids
+msgid "Daily Reports"
+msgstr "Daily Reports (Rapports quotidiens)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr__summary
+msgid "Daily Summary"
+msgstr "Daily Summary (Résumé quotidien)"
+
+#. module: construction_management
+#: model:ir.ui.menu,name:construction_management.menu_construction_dashboard
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_project_form
+msgid "Dashboard"
+msgstr "Dashboard (Tableau de bord)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr__date
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_usage__date
+#: model:ir.model.fields,field_description:construction_management.field_construction_progress__date
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_search
+msgid "Date"
+msgstr "Date (Date)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__duration
+msgid "Days"
+msgstr "Days (Jours)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__description
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation_line__description
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__description
+#: model_terms:ir.ui.view,arch_db:construction_management.report_quotation_document
+msgid "Description"
+msgstr "Description (Description)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_boq__display_name
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr__display_name
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr_material__display_name
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__display_name
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__display_name
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_maintenance__display_name
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_usage__display_name
+#: model:ir.model.fields,field_description:construction_management.field_construction_inventory__display_name
+#: model:ir.model.fields,field_description:construction_management.field_construction_progress__display_name
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__display_name
+#: model:ir.model.fields,field_description:construction_management.field_construction_quality__display_name
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__display_name
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation_line__display_name
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__display_name
+msgid "Display Name"
+msgstr "Display Name (Nom d'affichage)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_project_form
+msgid "Download Image"
+msgstr "Download Image (Télécharger l'image)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_maintenance__downtime_hours
+msgid "Downtime Hours"
+msgstr "Downtime Hours (Heures d'arrêt)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_employee_work__state__draft
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_equipment_allocation__state__draft
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_project__state__draft
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_quotation__state__draft
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_search
+msgid "Draft"
+msgstr "Draft (Brouillon)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_quotation_line__work_type__electrical
+msgid "Electrical Work"
+msgstr "Electrical Work (Travaux électriques)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__employee_id
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_search
+msgid "Employee"
+msgstr "Employee (Employé)"
+
+#. module: construction_management
+#: model:ir.ui.menu,name:construction_management.menu_construction_employees
+msgid "Employee Management"
+msgstr "Employee Management (Gestion des employés)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_project_form_inherit
+msgid "Employee Work"
+msgstr "Employee Work (Travail des employés)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_pivot
+msgid "Employee Work Analysis"
+msgstr "Employee Work Analysis (Analyse du travail des employés)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_calendar
+msgid "Employee Work Calendar"
+msgstr "Employee Work Calendar (Calendrier de travail des employés)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_form
+msgid "Employee Work Record"
+msgstr "Employee Work Record (Dossier de travail de l'employé)"
+
+#. module: construction_management
+#: model:ir.actions.act_window,name:construction_management.action_construction_employee_work
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__employee_work_ids
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_search
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_tree
+msgid "Employee Work Records"
+msgstr "Employee Work Records (Dossiers de travail des employés)"
+
+#. module: construction_management
+#: model:ir.actions.act_window,name:construction_management.action_construction_employee_work_reports
+msgid "Employee Work Reports"
+msgstr "Employee Work Reports (Rapports de travail des employés)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_graph
+msgid "Employee Work Statistics"
+msgstr "Employee Work Statistics (Statistiques sur le travail des employés)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__end_date
+msgid "End Date"
+msgstr "End Date (Date de fin)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__end_time
+msgid "End Time"
+msgstr "End Time (Heure de fin)"
+
+#. module: construction_management
+#: model:ir.model.fields,help:construction_management.field_construction_employee_work__end_time
+msgid "End time in 24-hour format (e.g., 17.5 for 5:30 PM)"
+msgstr ""
+"End time in 24-hour format (e.g., 17.5 for 5:30 PM) (Heure de fin au format "
+"24 heures (par exemple, 17h5 pour 17h30))"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_quotation_form
+msgid "Enter final contract value..."
+msgstr "Enter final contract value... (Entrez la valeur finale du contrat...)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_quotation_form
+msgid "Enter terms and conditions..."
+msgstr "Enter terms and conditions... (Entrez les termes et conditions...)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_maintenance__equipment_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_usage__equipment_id
+#: model_terms:ir.ui.view,arch_db:construction_management.report_quotation_document
+msgid "Equipment"
+msgstr "Equipment (Équipement)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_project_form_equipment
+msgid "Equipment & Machinery"
+msgstr "Equipment & Machinery (Équipements et machines)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_equipment_allocation_form
+msgid "Equipment Allocation"
+msgstr "Equipment Allocation (Allocation d'équipement)"
+
+#. module: construction_management
+#: model:ir.model,name:construction_management.model_construction_equipment_allocation
+msgid "Equipment Allocation to Projects"
+msgstr ""
+"Equipment Allocation to Projects (Allocation d'équipement aux projets)"
+
+#. module: construction_management
+#: model:ir.actions.act_window,name:construction_management.action_construction_equipment_allocation
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__equipment_allocation_ids
+#: model:ir.ui.menu,name:construction_management.construction_equipment_allocation_menu
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_equipment_allocation_tree
+msgid "Equipment Allocations"
+msgstr "Equipment Allocations (Allocations d'équipement)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__equipment_cost
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation_line__equipment_cost
+msgid "Equipment Cost"
+msgstr "Equipment Cost (Coût de l'équipement)"
+
+#. module: construction_management
+#: model:ir.actions.act_window,name:construction_management.action_construction_equipment_maintenance
+msgid "Equipment Maintenance"
+msgstr "Equipment Maintenance (Entretien des équipements)"
+
+#. module: construction_management
+#: model:ir.model,name:construction_management.model_construction_equipment_maintenance
+msgid "Equipment Maintenance Log"
+msgstr "Equipment Maintenance Log (Journal d'entretien de l'équipement)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_equipment_maintenance_tree
+msgid "Equipment Maintenance Logs"
+msgstr "Equipment Maintenance Logs (Journaux d'entretien de l'équipement)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__equipment_total
+msgid "Equipment Total"
+msgstr "Equipment Total (Équipement Total)"
+
+#. module: construction_management
+#: model:ir.model,name:construction_management.model_construction_equipment_usage
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_equipment_usage_form
+msgid "Equipment Usage Log"
+msgstr "Equipment Usage Log (Journal d'utilisation de l'équipement)"
+
+#. module: construction_management
+#: model:ir.actions.act_window,name:construction_management.action_construction_equipment_usage
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_equipment_usage_tree
+msgid "Equipment Usage Logs"
+msgstr "Equipment Usage Logs (Journaux d'utilisation de l'équipement)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__e_end_date
+msgid "Expected Completion Date"
+msgstr "Expected Completion Date (Date d'achèvement prévue)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__e_contract_value
+msgid "Expected Contract Value"
+msgstr "Expected Contract Value (Valeur prévue du contrat)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__e_equipment_cost
+msgid "Expected Equipment Cost"
+msgstr "Expected Equipment Cost (Coût d'équipement prévu)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__e_labor_cost
+msgid "Expected Labor Cost"
+msgstr "Expected Labor Cost (Coût de la main d'œuvre prévu)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__e_material_cost
+msgid "Expected Material Cost"
+msgstr "Expected Material Cost (Coût du matériel prévu)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__return_date
+msgid "Expected Return Date"
+msgstr "Expected Return Date (Date de retour prévue)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__e_start_date
+msgid "Expected Start Date"
+msgstr "Expected Start Date (Date de début prévue)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__e_total_cost
+msgid "Expected Total Cost"
+msgstr "Expected Total Cost (Coût total prévu)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__account_payment__payment_type_construction__final
+msgid "Final Payment"
+msgstr "Final Payment (Paiement final)"
+
+#. module: construction_management
+#: model:ir.model.fields,help:construction_management.field_construction_quotation__contract_value
+msgid ""
+"Final agreed contract value with the client (can be different from "
+"calculated total)"
+msgstr ""
+"Final agreed contract value with the client (can be different from "
+"calculated total) (Valeur finale du contrat convenue avec le client (peut "
+"être différente du total calculé))"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation_line__finishing_type
+msgid "Finishing Type"
+msgstr "Finishing Type (Type de finition)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_quotation_line__work_type__flooring
+msgid "Flooring"
+msgstr "Flooring (Sol)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__message_follower_ids
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__message_follower_ids
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__message_follower_ids
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__message_follower_ids
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__message_follower_ids
+msgid "Followers"
+msgstr "Followers (Abonnés)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__message_partner_ids
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__message_partner_ids
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__message_partner_ids
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__message_partner_ids
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Followers (Partners) (Abonnés (partenaires))"
+
+#. module: construction_management
+#: model:ir.model.fields,help:construction_management.field_construction_employee_work__activity_type_icon
+#: model:ir.model.fields,help:construction_management.field_construction_equipment_allocation__activity_type_icon
+#: model:ir.model.fields,help:construction_management.field_construction_project__activity_type_icon
+#: model:ir.model.fields,help:construction_management.field_construction_quotation__activity_type_icon
+#: model:ir.model.fields,help:construction_management.field_project_task_simple__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+"Font awesome icon e.g. fa-tasks (Icône géniale de police, par exemple.tâches"
+" fat)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_usage__fuel_consumption
+msgid "Fuel Consumption (Liters)"
+msgstr "Fuel Consumption (Liters) (Consommation de carburant (litres))"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_search
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_inventory_search
+#: model_terms:ir.ui.view,arch_db:construction_management.view_project_task_simple_search
+msgid "Group By"
+msgstr "Group By (Regrouper par)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__has_message
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__has_message
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__has_message
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__has_message
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__has_message
+msgid "Has Message"
+msgstr "Has Message (A un message)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__hourly_rate
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__hourly_rate
+msgid "Hourly Rate"
+msgstr "Hourly Rate (Taux horaire)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_usage__hours_used
+msgid "Hours Used"
+msgstr "Hours Used (Heures utilisées)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_boq__id
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr__id
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr_material__id
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__id
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__id
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_maintenance__id
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_usage__id
+#: model:ir.model.fields,field_description:construction_management.field_construction_inventory__id
+#: model:ir.model.fields,field_description:construction_management.field_construction_progress__id
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__id
+#: model:ir.model.fields,field_description:construction_management.field_construction_quality__id
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__id
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation_line__id
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__id
+msgid "ID"
+msgstr "ID (IDENTIFIANT)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__activity_exception_icon
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__activity_exception_icon
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__activity_exception_icon
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__activity_exception_icon
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__activity_exception_icon
+msgid "Icon"
+msgstr "Icon (Icône)"
+
+#. module: construction_management
+#: model:ir.model.fields,help:construction_management.field_construction_employee_work__activity_exception_icon
+#: model:ir.model.fields,help:construction_management.field_construction_equipment_allocation__activity_exception_icon
+#: model:ir.model.fields,help:construction_management.field_construction_project__activity_exception_icon
+#: model:ir.model.fields,help:construction_management.field_construction_quotation__activity_exception_icon
+#: model:ir.model.fields,help:construction_management.field_project_task_simple__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+"Icon to indicate an exception activity. (Icône pour indiquer une activité "
+"d'exception.)"
+
+#. module: construction_management
+#: model:ir.model.fields,help:construction_management.field_construction_employee_work__message_needaction
+#: model:ir.model.fields,help:construction_management.field_construction_equipment_allocation__message_needaction
+#: model:ir.model.fields,help:construction_management.field_construction_project__message_needaction
+#: model:ir.model.fields,help:construction_management.field_construction_quotation__message_needaction
+#: model:ir.model.fields,help:construction_management.field_project_task_simple__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+"If checked, new messages require your attention. (Si cette case est cochée, "
+"les nouveaux messages nécessitent votre attention.)"
+
+#. module: construction_management
+#: model:ir.model.fields,help:construction_management.field_construction_employee_work__message_has_error
+#: model:ir.model.fields,help:construction_management.field_construction_employee_work__message_has_sms_error
+#: model:ir.model.fields,help:construction_management.field_construction_equipment_allocation__message_has_error
+#: model:ir.model.fields,help:construction_management.field_construction_equipment_allocation__message_has_sms_error
+#: model:ir.model.fields,help:construction_management.field_construction_project__message_has_error
+#: model:ir.model.fields,help:construction_management.field_construction_project__message_has_sms_error
+#: model:ir.model.fields,help:construction_management.field_construction_quotation__message_has_error
+#: model:ir.model.fields,help:construction_management.field_construction_quotation__message_has_sms_error
+#: model:ir.model.fields,help:construction_management.field_project_task_simple__message_has_error
+#: model:ir.model.fields,help:construction_management.field_project_task_simple__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+"If checked, some messages have a delivery error. (Si coché, certains "
+"messages ont une erreur de livraison.)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_account_analytic_line__image_attachment
+msgid "Image Attachment"
+msgstr "Image Attachment (Image jointe)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr__attachment_ids
+#: model:ir.model.fields,field_description:construction_management.field_construction_quality__attachment_ids
+msgid "Image Attachments"
+msgstr "Image Attachments (Pièces jointes d’images)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_account_analytic_line__image_filename
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr__image_filename
+#: model:ir.model.fields,field_description:construction_management.field_construction_quality__image_filename
+msgid "Image Filename"
+msgstr "Image Filename (Nom du fichier image)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__project_task_simple__status__in_progress
+#: model_terms:ir.ui.view,arch_db:construction_management.view_project_task_simple_search
+msgid "In Progress"
+msgstr "In Progress (En cours)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_equipment_allocation__state__in_use
+msgid "In Use"
+msgstr "In Use (Utilisé)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_equipment_maintenance__maintenance_type__inspection
+msgid "Inspection"
+msgstr "Inspection (Inspection)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quality__inspection_date
+msgid "Inspection Date"
+msgstr "Inspection Date (Date d'inspection)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__internal_notes
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_quotation_form
+msgid "Internal Notes"
+msgstr "Internal Notes (Notes internes)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_quotation_form
+msgid "Internal notes (not visible to client)..."
+msgstr ""
+"Internal notes (not visible to client)... (Notes internes (non visibles par "
+"le client)...)"
+
+#. module: construction_management
+#: model:ir.ui.menu,name:construction_management.menu_construction_inventory_root
+msgid "Inventory"
+msgstr "Inventory (Inventaire)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__stock_move_ids
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_project_form
+msgid "Inventory Moves"
+msgstr "Inventory Moves (Mouvements d'inventaire)"
+
+#. module: construction_management
+#: model:ir.model.fields,help:construction_management.field_account_bank_statement_line__progress_billing
+#: model:ir.model.fields,help:construction_management.field_account_move__progress_billing
+msgid "Invoice based on project completion percentage"
+msgstr ""
+"Invoice based on project completion percentage (Facture basée sur le "
+"pourcentage d'achèvement du projet)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__invoice_ids
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_project_form
+msgid "Invoices"
+msgstr "Invoices (Factures)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__message_is_follower
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__message_is_follower
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__message_is_follower
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__message_is_follower
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__message_is_follower
+msgid "Is Follower"
+msgstr "Is Follower (Est un suiveur)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__is_subtask
+msgid "Is Subtask"
+msgstr "Is Subtask (Est-ce qu'une sous-tâche)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quality__issues_found
+msgid "Issues Found"
+msgstr "Issues Found (Problèmes trouvés)"
+
+#. module: construction_management
+#: model:ir.model,name:construction_management.model_account_move
+msgid "Journal Entry"
+msgstr "Journal Entry (Entrée de journal)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_boq__labor_cost
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__labor_cost
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation_line__labor_cost
+#: model_terms:ir.ui.view,arch_db:construction_management.report_quotation_document
+msgid "Labor Cost"
+msgstr "Labor Cost (Coût de la main d'œuvre)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__total_labor_cost_from_work
+msgid "Labor Cost (Work Records)"
+msgstr ""
+"Labor Cost (Work Records) (Coût de la main-d'œuvre (dossiers de travail))"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation_line__labor_days
+msgid "Labor Days"
+msgstr "Labor Days (Fêtes du Travail)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_boq__labor_hours
+msgid "Labor Hours"
+msgstr "Labor Hours (Heures de travail)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation_line__labor_rate_per_day
+msgid "Labor Rate/Day"
+msgstr "Labor Rate/Day (Taux de travail/jour)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__labor_total
+msgid "Labor Total"
+msgstr "Labor Total (Travail total)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_boq__write_uid
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr__write_uid
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr_material__write_uid
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__write_uid
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__write_uid
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_maintenance__write_uid
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_usage__write_uid
+#: model:ir.model.fields,field_description:construction_management.field_construction_inventory__write_uid
+#: model:ir.model.fields,field_description:construction_management.field_construction_progress__write_uid
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__write_uid
+#: model:ir.model.fields,field_description:construction_management.field_construction_quality__write_uid
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__write_uid
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation_line__write_uid
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by (Dernière mise à jour par)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_boq__write_date
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr__write_date
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr_material__write_date
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__write_date
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__write_date
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_maintenance__write_date
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_usage__write_date
+#: model:ir.model.fields,field_description:construction_management.field_construction_inventory__write_date
+#: model:ir.model.fields,field_description:construction_management.field_construction_progress__write_date
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__write_date
+#: model:ir.model.fields,field_description:construction_management.field_construction_quality__write_date
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__write_date
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation_line__write_date
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__write_date
+msgid "Last Updated on"
+msgstr "Last Updated on (Dernière mise à jour le)"
+
+#. module: construction_management
+#: model:ir.model,name:construction_management.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Lead/Opportunity (Piste/Opportunité)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation_line__length
+msgid "Length (m)"
+msgstr "Length (m) (Longueur (m))"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__level
+msgid "Level"
+msgstr "Level (Niveau)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation_line__line_total
+msgid "Line Total"
+msgstr "Line Total (Total de ligne)"
+
+#. module: construction_management
+#: model:ir.model.fields,help:construction_management.field_purchase_order__construction_project_id
+msgid "Link this purchase to a construction project"
+msgstr ""
+"Link this purchase to a construction project (Lier cet achat à un projet de "
+"construction)"
+
+#. module: construction_management
+#: model:ir.model.fields,help:construction_management.field_purchase_order__boq_item_id
+msgid "Link to specific BOQ item being purchased"
+msgstr ""
+"Link to specific BOQ item being purchased (Lien vers un article BOQ "
+"spécifique en cours d'achat)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_inventory__stock_status__low
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_inventory_search
+msgid "Low Stock"
+msgstr "Low Stock (Stock faible)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__equipment_id
+msgid "Machine Number"
+msgstr "Machine Number (Numéro de machine)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_project_task_simple_search
+msgid "Main Tasks"
+msgstr "Main Tasks (Tâches principales)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_maintenance__cost
+msgid "Maintenance Cost"
+msgstr "Maintenance Cost (Coût d'entretien)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_maintenance__date
+msgid "Maintenance Date"
+msgstr "Maintenance Date (Date d'entretien)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_maintenance__description
+msgid "Maintenance Description"
+msgstr "Maintenance Description (Description de l'entretien)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__maintenance_log_ids
+#: model:ir.ui.menu,name:construction_management.construction_equipment_maintenance_menu
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_equipment_allocation_form
+msgid "Maintenance Logs"
+msgstr "Maintenance Logs (Journaux d'entretien)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_maintenance__maintenance_type
+msgid "Maintenance Type"
+msgstr "Maintenance Type (Type d'entretien)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_quotation_form
+msgid "Margin"
+msgstr "Margin (Marge)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.report_quotation_document
+msgid "Margin ("
+msgstr "Margin ( (Marge ()"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__margin_percent
+msgid "Margin (%)"
+msgstr "Margin (%) (Marge (%))"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__margin_amount
+msgid "Margin Amount"
+msgstr "Margin Amount (Montant de la marge)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_form
+msgid "Mark as Paid"
+msgstr "Mark as Paid (Marquer comme payé)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_quotation_line__work_type__masonry
+msgid "Masonry"
+msgstr "Masonry (Maçonnerie)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_boq__material_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr_material__product_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_inventory__material_id
+msgid "Material"
+msgstr "Material (Matériel)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__material_cost
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation_line__material_cost
+#: model_terms:ir.ui.view,arch_db:construction_management.report_quotation_document
+msgid "Material Cost"
+msgstr "Material Cost (Coût du matériel)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__material_total
+msgid "Material Total"
+msgstr "Material Total (Matière Totale)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation_line__material_unit_cost
+msgid "Material Unit Cost"
+msgstr "Material Unit Cost (Coût unitaire du matériau)"
+
+#. module: construction_management
+#: model:ir.ui.menu,name:construction_management.menu_construction_inventory_materials
+msgid "Materials Inventory"
+msgstr "Materials Inventory (Inventaire des matériaux)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr__material_used_ids
+msgid "Materials Used"
+msgstr "Materials Used (Matériaux utilisés)"
+
+#. module: construction_management
+#: model:ir.model,name:construction_management.model_construction_dpr_material
+msgid "Materials Used in DPR"
+msgstr "Materials Used in DPR (Matériaux utilisés dans le DPR)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__message_has_error
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__message_has_error
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__message_has_error
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__message_has_error
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__message_has_error
+msgid "Message Delivery error"
+msgstr "Message Delivery error (Erreur de livraison du message)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__message_ids
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__message_ids
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__message_ids
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__message_ids
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__message_ids
+msgid "Messages"
+msgstr "Messages (Messages)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__my_activity_date_deadline
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__my_activity_date_deadline
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__my_activity_date_deadline
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__my_activity_date_deadline
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "My Activity Deadline (Date limite de mon activité)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__activity_calendar_event_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__activity_calendar_event_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__activity_calendar_event_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__activity_calendar_event_id
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+"Next Activity Calendar Event (Prochain événement du calendrier d'activités)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__activity_date_deadline
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__activity_date_deadline
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__activity_date_deadline
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__activity_date_deadline
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Next Activity Deadline (Date limite de la prochaine activité)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__activity_summary
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__activity_summary
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__activity_summary
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__activity_summary
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__activity_summary
+msgid "Next Activity Summary"
+msgstr "Next Activity Summary (Résumé de l'activité suivante)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__activity_type_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__activity_type_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__activity_type_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__activity_type_id
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__activity_type_id
+msgid "Next Activity Type"
+msgstr "Next Activity Type (Type d'activité suivant)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_maintenance__next_maintenance_date
+msgid "Next Maintenance Date"
+msgstr "Next Maintenance Date (Prochaine date de maintenance)"
+
+#. module: construction_management
+#: model_terms:ir.actions.act_window,help:construction_management.action_construction_equipment_maintenance
+msgid "No maintenance logs yet!"
+msgstr ""
+"No maintenance logs yet! (Aucun journal de maintenance pour l'instant !)"
+
+#. module: construction_management
+#: model_terms:ir.actions.act_window,help:construction_management.action_construction_equipment_usage
+msgid "No usage logs yet!"
+msgstr "No usage logs yet! (Aucun journal d'utilisation pour l'instant !)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__project_task_simple__status__not_started
+#: model_terms:ir.ui.view,arch_db:construction_management.view_project_task_simple_search
+msgid "Not Started"
+msgstr "Not Started (Non démarré)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__notes
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__notes
+#: model:ir.model.fields,field_description:construction_management.field_construction_progress__description
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_form
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_equipment_allocation_form
+msgid "Notes"
+msgstr "Notes (Remarques)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__message_needaction_counter
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__message_needaction_counter
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__message_needaction_counter
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__message_needaction_counter
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Number of Actions (Nombre d'actions)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr__employee_count
+msgid "Number of Employees"
+msgstr "Number of Employees (Nombre d'employés)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_crm_lead__quotation_count
+msgid "Number of Quotations"
+msgstr "Number of Quotations (Nombre de devis)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__message_has_error_counter
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__message_has_error_counter
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__message_has_error_counter
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__message_has_error_counter
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__message_has_error_counter
+msgid "Number of errors"
+msgstr "Number of errors (Nombre d'erreurs)"
+
+#. module: construction_management
+#: model:ir.model.fields,help:construction_management.field_construction_employee_work__message_needaction_counter
+#: model:ir.model.fields,help:construction_management.field_construction_equipment_allocation__message_needaction_counter
+#: model:ir.model.fields,help:construction_management.field_construction_project__message_needaction_counter
+#: model:ir.model.fields,help:construction_management.field_construction_quotation__message_needaction_counter
+#: model:ir.model.fields,help:construction_management.field_project_task_simple__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+"Number of messages requiring action (Nombre de messages nécessitant une "
+"action)"
+
+#. module: construction_management
+#: model:ir.model.fields,help:construction_management.field_construction_employee_work__message_has_error_counter
+#: model:ir.model.fields,help:construction_management.field_construction_equipment_allocation__message_has_error_counter
+#: model:ir.model.fields,help:construction_management.field_construction_project__message_has_error_counter
+#: model:ir.model.fields,help:construction_management.field_construction_quotation__message_has_error_counter
+#: model:ir.model.fields,help:construction_management.field_project_task_simple__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+"Number of messages with delivery error (Nombre de messages avec erreur de "
+"livraison)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__operator_name
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_usage__operator_name
+msgid "Operator Name"
+msgstr "Operator Name (Nom de l'opérateur)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__opportunity_id
+msgid "Opportunity"
+msgstr "Opportunity (Opportunité)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__sequence
+msgid "Order"
+msgstr "Order (Commande)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_quotation_line__work_type__other
+msgid "Other"
+msgstr "Other (Autre)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_inventory__stock_status__out_of_stock
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_inventory_search
+msgid "Out of Stock"
+msgstr "Out of Stock (En rupture de stock)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_inventory__stock_status__over_stock
+msgid "Over Stock"
+msgstr "Over Stock (Surstock)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__overtime_hours
+msgid "Overtime Hours"
+msgstr "Overtime Hours (Heures supplémentaires)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__overtime_pay
+msgid "Overtime Pay"
+msgstr "Overtime Pay (Rémunération des heures supplémentaires)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__overtime_rate
+msgid "Overtime Rate"
+msgstr "Overtime Rate (Taux d'heures supplémentaires)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_equipment_allocation__category__owned
+msgid "Owned"
+msgstr "Owned (Possédé)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_employee_work__payment_status__paid
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_search
+msgid "Paid"
+msgstr "Paid (Payé)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__paid_amount
+msgid "Paid Amount"
+msgstr "Paid Amount (Montant payé)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_quotation_line__work_type__painting
+msgid "Painting"
+msgstr "Painting (Peinture)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_boq__parent_id
+msgid "Parent BOQ"
+msgstr "Parent BOQ (BOQ parent)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__parent_path
+msgid "Parent Path"
+msgstr "Parent Path (Chemin parent)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__parent_id
+#: model_terms:ir.ui.view,arch_db:construction_management.view_project_task_simple_form
+#: model_terms:ir.ui.view,arch_db:construction_management.view_project_task_simple_search
+msgid "Parent Task"
+msgstr "Parent Task (Tâche parentale)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_employee_work__payment_status__partial
+msgid "Partially Paid"
+msgstr "Partially Paid (Partiellement payé)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_quotation_line__work_type__partition
+msgid "Partitions"
+msgstr "Partitions (Partitions)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_maintenance__parts_used
+msgid "Parts Used"
+msgstr "Parts Used (Pièces utilisées)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__payment_date
+msgid "Payment Date"
+msgstr "Payment Date (Date de paiement)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_form
+msgid "Payment Information"
+msgstr "Payment Information (Informations de paiement)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__payment_reference
+msgid "Payment Reference"
+msgstr "Payment Reference (Référence de paiement)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__payment_status
+msgid "Payment Status"
+msgstr "Payment Status (Statut du paiement)"
+
+#. module: construction_management
+#: model:ir.model,name:construction_management.model_account_payment
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__payment_ids
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_project_form
+msgid "Payments"
+msgstr "Payments (Paiements)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_employee_work__payment_status__pending
+msgid "Pending"
+msgstr "Pending (En attente)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_search
+msgid "Pending Payment"
+msgstr "Pending Payment (En attente de paiement)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr__per_cost
+msgid "Per Day/employee"
+msgstr "Per Day/employee (Par jour/employé)"
+
+#. module: construction_management
+#: model:ir.model.fields,help:construction_management.field_account_bank_statement_line__billing_percentage
+#: model:ir.model.fields,help:construction_management.field_account_move__billing_percentage
+msgid "Percentage of project being billed"
+msgstr "Percentage of project being billed (Pourcentage du projet facturé)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_quotation_line__unit__piece
+msgid "Piece"
+msgstr "Piece (Morceau)"
+
+#. module: construction_management
+#: model:ir.ui.menu,name:construction_management.construction_plant_machinery_menu
+msgid "Plant & Machinery"
+msgstr "Plant & Machinery (Usines et machines)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_quotation_line__work_type__plumbing
+msgid "Plumbing"
+msgstr "Plumbing (Plomberie)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_equipment_maintenance__maintenance_type__preventive
+msgid "Preventive"
+msgstr "Preventive (Préventif)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_quotation_form
+msgid "Print"
+msgstr "Print (Imprimer)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_progress__progress_percent
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__progress_percent
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__progress_percent
+msgid "Progress %"
+msgstr "Progress % (Progrès %)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_account_bank_statement_line__progress_billing
+#: model:ir.model.fields,field_description:construction_management.field_account_move__progress_billing
+msgid "Progress Billing"
+msgstr "Progress Billing (Facturation progressive)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_progress__name
+msgid "Progress Entry"
+msgstr "Progress Entry (Entrée de progression)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__account_payment__payment_type_construction__progress
+msgid "Progress Payment"
+msgstr "Progress Payment (Paiement progressif)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__progress_ids
+msgid "Progress Updates"
+msgstr "Progress Updates (Mises à jour des progrès)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_account_analytic_line__construction_project_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_boq__project_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr__project_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__project_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__project_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_maintenance__project_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_usage__project_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_inventory__project_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_progress__project_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_quality__project_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__project_id
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__project_id
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_search
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_inventory_search
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_quotation_form
+#: model_terms:ir.ui.view,arch_db:construction_management.view_project_task_simple_search
+msgid "Project"
+msgstr "Project (Projet)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_crm_lead__project_count
+msgid "Project Count"
+msgstr "Project Count (Nombre de projets)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__name
+msgid "Project Name"
+msgstr "Project Name (Nom du projet)"
+
+#. module: construction_management
+#: model:ir.actions.act_window,name:construction_management.action_project_task_simple
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__timeline_ids
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_project_form
+msgid "Project Timeline"
+msgstr "Project Timeline (Chronologie du projet)"
+
+#. module: construction_management
+#: model:ir.model,name:construction_management.model_project_task_simple
+msgid "Project Timeline Task"
+msgstr "Project Timeline Task (Tâche de chronologie du projet)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_project_form
+msgid "Project Title"
+msgstr "Project Title (Titre du projet)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_crm_lead__project_ids
+#: model:ir.ui.menu,name:construction_management.construction_projects_menu
+#: model_terms:ir.ui.view,arch_db:construction_management.view_crm_lead_form_construction
+msgid "Projects"
+msgstr "Projects (Projets)"
+
+#. module: construction_management
+#: model:ir.model,name:construction_management.model_purchase_order
+msgid "Purchase Order"
+msgstr "Purchase Order (Bon de commande)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__purchase_ids
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_project_form
+msgid "Purchases"
+msgstr "Purchases (Achats)"
+
+#. module: construction_management
+#: model:ir.actions.act_window,name:construction_management.action_construction_quality
+#: model:ir.model,name:construction_management.model_construction_quality
+#: model:ir.ui.menu,name:construction_management.construction_quality_menu
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_quality_form
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_quality_tree
+msgid "Quality & Safety"
+msgstr "Quality & Safety (Qualité et sécurité)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__quality_ids
+msgid "Quality Records"
+msgstr "Quality Records (Dossiers de qualité)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_boq__quantity
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr_material__quantity
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation_line__quantity
+#: model_terms:ir.ui.view,arch_db:construction_management.report_quotation_document
+msgid "Quantity"
+msgstr "Quantity (Quantité)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation_line__quotation_id
+#: model_terms:ir.ui.view,arch_db:construction_management.report_quotation_document
+msgid "Quotation"
+msgstr "Quotation (Citation)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__date_quotation
+msgid "Quotation Date"
+msgstr "Quotation Date (Date du devis)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.report_quotation_document
+msgid "Quotation Details"
+msgstr "Quotation Details (Détails du devis)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__line_ids
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_quotation_form
+msgid "Quotation Lines"
+msgstr "Quotation Lines (Lignes de devis)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__name
+msgid "Quotation Number"
+msgstr "Quotation Number (Numéro de devis)"
+
+#. module: construction_management
+#: model:ir.actions.act_window,name:construction_management.action_construction_quotation
+#: model:ir.model.fields,field_description:construction_management.field_crm_lead__quotation_ids
+#: model:ir.ui.menu,name:construction_management.menu_construction_quotation
+#: model_terms:ir.ui.view,arch_db:construction_management.view_crm_lead_form_construction
+msgid "Quotations"
+msgstr "Quotations (Citations)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__rating_ids
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__rating_ids
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__rating_ids
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__rating_ids
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__rating_ids
+msgid "Ratings"
+msgstr "Ratings (Notes)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__name
+msgid "Reference"
+msgstr "Reference (Référence)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__regular_pay
+msgid "Regular Pay"
+msgstr "Regular Pay (Salaire régulier)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_quotation_form
+msgid "Reject"
+msgstr "Reject (Rejeter)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_quotation__state__rejected
+msgid "Rejected"
+msgstr "Rejected (Rejeté)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr_material__remarks
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_usage__remarks
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_equipment_usage_form
+msgid "Remarks"
+msgstr "Remarks (Remarques)"
+
+#. module: construction_management
+#: model:ir.ui.menu,name:construction_management.menu_construction_employee_reports
+msgid "Reports"
+msgstr "Reports (Rapports)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_inventory_form
+msgid "Required"
+msgstr "Required (Requis)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_form
+msgid "Reset to Draft"
+msgstr "Reset to Draft (Réinitialiser au brouillon)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__activity_user_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__activity_user_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__activity_user_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__activity_user_id
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__activity_user_id
+msgid "Responsible User"
+msgstr "Responsible User (Utilisateur responsable)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__account_payment__payment_type_construction__retention
+msgid "Retention Release"
+msgstr "Retention Release (Libération de conservation)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_equipment_allocation_form
+msgid "Return Equipment"
+msgstr "Return Equipment (Retour d'équipement)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_equipment_allocation__state__returned
+msgid "Returned"
+msgstr "Returned (Retourné)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_quotation_line__work_type__roofing
+msgid "Roofing"
+msgstr "Roofing (Toiture)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__message_has_sms_error
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__message_has_sms_error
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__message_has_sms_error
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__message_has_sms_error
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "SMS Delivery error (Erreur de livraison SMS)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_quotation_form
+msgid "Send to Client"
+msgstr "Send to Client (Envoyer au client)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_quotation__state__sent
+msgid "Sent"
+msgstr "Sent (Envoyé)"
+
+#. module: construction_management
+#: model:ir.model,name:construction_management.model_ir_sequence
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation_line__sequence
+msgid "Sequence"
+msgstr "Sequence (Séquence)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr__issues
+msgid "Site Issues"
+msgstr "Site Issues (Problèmes de site)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__start_date
+msgid "Start Date"
+msgstr "Start Date (Date de début)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__start_time
+msgid "Start Time"
+msgstr "Start Time (Heure de début)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_equipment_allocation_form
+msgid "Start Use"
+msgstr "Start Use (Commencer à utiliser)"
+
+#. module: construction_management
+#: model:ir.model.fields,help:construction_management.field_construction_employee_work__start_time
+msgid "Start time in 24-hour format (e.g., 8.5 for 8:30 AM)"
+msgstr ""
+"Start time in 24-hour format (e.g., 8.5 for 8:30 AM) (Heure de début au "
+"format 24 heures (par exemple, 8,5 pour 8h30))"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__state
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__state
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__state
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__state
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__status
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_search
+#: model_terms:ir.ui.view,arch_db:construction_management.view_project_task_simple_search
+msgid "Status"
+msgstr "Status (Statut)"
+
+#. module: construction_management
+#: model:ir.model.fields,help:construction_management.field_construction_employee_work__activity_state
+#: model:ir.model.fields,help:construction_management.field_construction_equipment_allocation__activity_state
+#: model:ir.model.fields,help:construction_management.field_construction_project__activity_state
+#: model:ir.model.fields,help:construction_management.field_construction_quotation__activity_state
+#: model:ir.model.fields,help:construction_management.field_project_task_simple__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities. (Statut basé sur les activités\n"
+"En retard : la date d'échéance est déjà dépassée\n"
+"Aujourd'hui : la date de l'activité est aujourd'hui\n"
+"Prévu : Activités futures.)"
+
+#. module: construction_management
+#: model:ir.model,name:construction_management.model_stock_move
+msgid "Stock Move"
+msgstr "Stock Move (Mouvement de stock)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr__stock_move_ids
+msgid "Stock Moves"
+msgstr "Stock Moves (Mouvements de stocks)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_inventory__stock_status
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_inventory_search
+msgid "Stock Status"
+msgstr "Stock Status (État des stocks)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_account_analytic_line__construction_subtask_id
+msgid "Subtask"
+msgstr "Subtask (Sous-tâche)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_project_task_simple_tree
+msgid "Subtask Name"
+msgstr "Subtask Name (Nom de la sous-tâche)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__child_ids
+#: model_terms:ir.ui.view,arch_db:construction_management.view_project_task_simple_form
+#: model_terms:ir.ui.view,arch_db:construction_management.view_project_task_simple_search
+msgid "Subtasks"
+msgstr "Subtasks (Sous-tâches)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__subtotal
+msgid "Subtotal"
+msgstr "Subtotal (Total)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__supervisor_id
+msgid "Supervisor"
+msgstr "Supervisor (Superviseur)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation_line__surface_area
+msgid "Surface (m²)"
+msgstr "Surface (m²) (Superficie (m²))"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_account_analytic_line__construction_task_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__construction_task_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__construction_task_id
+#: model:ir.model.fields,field_description:construction_management.field_construction_progress__task_id
+#: model_terms:ir.ui.view,arch_db:construction_management.view_project_task_simple_form
+msgid "Task"
+msgstr "Task (Tâche)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_search
+msgid "Task Category"
+msgstr "Task Category (Catégorie de tâche)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__task_description
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_form
+msgid "Task Description"
+msgstr "Task Description (Description de la tâche)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__name
+#: model_terms:ir.ui.view,arch_db:construction_management.view_project_task_simple_tree
+msgid "Task Name"
+msgstr "Task Name (Nom de la tâche)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_maintenance__technician_name
+msgid "Technician Name"
+msgstr "Technician Name (Nom du technicien)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__notes
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_quotation_form
+msgid "Terms & Conditions"
+msgstr "Terms & Conditions (Conditions générales)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.report_quotation_document
+msgid "Terms &amp; Conditions"
+msgstr "Terms &amp; Conditions (Termes et conditionsConditions)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_search
+msgid "This Month"
+msgstr "This Month (Ce mois-ci)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_search
+msgid "This Week"
+msgstr "This Week (Cette semaine)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_quotation_line__work_type__tiling
+msgid "Tiling"
+msgstr "Tiling (Carrelage)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__timesheet_ids
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_project_form
+msgid "Timesheets"
+msgstr "Timesheets (Feuilles de temps)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_search
+msgid "Today"
+msgstr "Today (Aujourd'hui)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_quotation_line__unit__ton
+msgid "Ton"
+msgstr "Ton (Tonne)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.report_quotation_document
+msgid "Total"
+msgstr "Total (Total)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__total_amount
+msgid "Total Amount"
+msgstr "Total Amount (Montant total)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr_material__total_cost
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__total_cost
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__total_cost
+msgid "Total Cost"
+msgstr "Total Cost (Coût total)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__total_days
+msgid "Total Days Used"
+msgstr "Total Days Used (Nombre total de jours d'utilisation)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__total_hours
+msgid "Total Hours Used"
+msgstr "Total Hours Used (Nombre total d'heures utilisées)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__total_invoiced
+msgid "Total Invoiced"
+msgstr "Total Invoiced (Total facturé)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__total_paid
+msgid "Total Paid"
+msgstr "Total Paid (Total payé)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__total_pay
+msgid "Total Pay"
+msgstr "Total Pay (Salaire total)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_boq__total_price
+msgid "Total Price"
+msgstr "Total Price (Prix ​​total)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_inventory__total_required
+msgid "Total Required"
+msgstr "Total Required (Total requis)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_inventory__total_value
+msgid "Total Value"
+msgstr "Total Value (Valeur totale)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr__labor_hours
+msgid "Total Working Hours"
+msgstr "Total Working Hours (Heures de travail totales)"
+
+#. module: construction_management
+#: model:ir.model.fields,help:construction_management.field_construction_employee_work__break_hours
+msgid "Total break time in hours"
+msgstr "Total break time in hours (Temps de pause total en heures)"
+
+#. module: construction_management
+#: model_terms:ir.actions.act_window,help:construction_management.action_construction_equipment_usage
+msgid "Track daily equipment usage, fuel consumption, and operator details."
+msgstr ""
+"Track daily equipment usage, fuel consumption, and operator details. (Suivez"
+" l’utilisation quotidienne de l’équipement, la consommation de carburant et "
+"les détails de l’opérateur.)"
+
+#. module: construction_management
+#: model_terms:ir.actions.act_window,help:construction_management.action_construction_employee_work
+msgid ""
+"Track daily work activities, hours, and payments for construction employees."
+msgstr ""
+"Track daily work activities, hours, and payments for construction employees."
+" (Suivez les activités de travail quotidiennes, les heures et les paiements "
+"des employés de la construction.)"
+
+#. module: construction_management
+#: model_terms:ir.actions.act_window,help:construction_management.action_construction_equipment_maintenance
+msgid "Track equipment maintenance activities, costs, and schedules."
+msgstr ""
+"Track equipment maintenance activities, costs, and schedules. (Suivez les "
+"activités, les coûts et les calendriers de maintenance des équipements.)"
+
+#. module: construction_management
+#: model_terms:ir.actions.act_window,help:construction_management.action_construction_inventory
+msgid ""
+"Track materials needed for construction projects based on BOQ requirements."
+msgstr ""
+"Track materials needed for construction projects based on BOQ requirements. "
+"(Suivez les matériaux nécessaires aux projets de construction en fonction "
+"des exigences BOQ.)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__transport_cost
+msgid "Transport Cost"
+msgstr "Transport Cost (Coût du transport)"
+
+#. module: construction_management
+#: model:ir.model.fields,help:construction_management.field_construction_employee_work__activity_exception_decoration
+#: model:ir.model.fields,help:construction_management.field_construction_equipment_allocation__activity_exception_decoration
+#: model:ir.model.fields,help:construction_management.field_construction_project__activity_exception_decoration
+#: model:ir.model.fields,help:construction_management.field_construction_quotation__activity_exception_decoration
+#: model:ir.model.fields,help:construction_management.field_project_task_simple__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+"Type of the exception activity on record. (Type d’activité exceptionnelle "
+"enregistrée.)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_boq__unit
+#: model:ir.model.fields,field_description:construction_management.field_construction_inventory__unit
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation_line__unit
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_quotation_line__unit__unit
+#: model_terms:ir.ui.view,arch_db:construction_management.report_quotation_document
+msgid "Unit"
+msgstr "Unit (Unité)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr_material__unit_cost
+#: model:ir.model.fields,field_description:construction_management.field_construction_inventory__unit_cost
+msgid "Unit Cost"
+msgstr "Unit Cost (Coût unitaire)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_boq__unit_price
+msgid "Unit Price"
+msgstr "Unit Price (Prix ​​unitaire)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr_material__unit
+msgid "Unit of Measure"
+msgstr "Unit of Measure (Unité de mesure)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__usage_log_ids
+#: model:ir.ui.menu,name:construction_management.construction_equipment_usage_menu
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_equipment_allocation_form
+msgid "Usage Logs"
+msgstr "Usage Logs (Journaux d'utilisation)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_quotation_form
+msgid "VAT"
+msgstr "VAT (T.V.A.)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.report_quotation_document
+msgid "VAT ("
+msgstr "VAT ( (TVA ()"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__vat_percent
+msgid "VAT (%)"
+msgstr "VAT (%) (TVA (%))"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__vat_amount
+msgid "VAT Amount"
+msgstr "VAT Amount (Montant de la TVA)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__validity_date
+msgid "Valid Until"
+msgstr "Valid Until (Valable jusqu'au)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation_line__waste_percent
+msgid "Waste %"
+msgstr "Waste % (Déchets %)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__website_message_ids
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_allocation__website_message_ids
+#: model:ir.model.fields,field_description:construction_management.field_construction_project__website_message_ids
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation__website_message_ids
+#: model:ir.model.fields,field_description:construction_management.field_project_task_simple__website_message_ids
+msgid "Website Messages"
+msgstr "Website Messages (Messages du site Web)"
+
+#. module: construction_management
+#: model:ir.model.fields,help:construction_management.field_construction_employee_work__website_message_ids
+#: model:ir.model.fields,help:construction_management.field_construction_equipment_allocation__website_message_ids
+#: model:ir.model.fields,help:construction_management.field_construction_project__website_message_ids
+#: model:ir.model.fields,help:construction_management.field_construction_quotation__website_message_ids
+#: model:ir.model.fields,help:construction_management.field_project_task_simple__website_message_ids
+msgid "Website communication history"
+msgstr ""
+"Website communication history (Historique des communications du site Web)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__work_date
+msgid "Work Date"
+msgstr "Work Date (Date de travail)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_equipment_usage__work_description
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_equipment_usage_form
+msgid "Work Description"
+msgstr "Work Description (Description du travail)"
+
+#. module: construction_management
+#: model_terms:ir.ui.view,arch_db:construction_management.view_construction_employee_work_form
+msgid "Work Details"
+msgstr "Work Details (Détails du travail)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__location
+msgid "Work Location"
+msgstr "Work Location (Lieu de travail)"
+
+#. module: construction_management
+#: model:ir.ui.menu,name:construction_management.menu_construction_employee_work
+msgid "Work Records"
+msgstr "Work Records (Dossiers de travail)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_quotation_line__work_type
+#: model_terms:ir.ui.view,arch_db:construction_management.report_quotation_document
+msgid "Work Type"
+msgstr "Work Type (Type de travail)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_employee_work__working_hours
+msgid "Working Hours"
+msgstr "Working Hours (Heures de travail)"
+
+#. module: construction_management
+#: model:ir.model.fields,field_description:construction_management.field_construction_dpr__working_hours
+msgid "Working Hours/employee"
+msgstr "Working Hours/employee (Heures de travail/employé)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_quotation_line__unit__kg
+msgid "kg"
+msgstr "kg (kilos)"
+
+#. module: construction_management
+#: model:ir.model.fields.selection,name:construction_management.selection__construction_quotation_line__unit__m2
+msgid "m²"
+msgstr "m² (m²)"

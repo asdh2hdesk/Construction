@@ -4,13 +4,14 @@ from odoo import models, fields, api
 class ConstructionDPR(models.Model):
     _name = 'construction.dpr'
     _description = 'Daily Progress Report'
+    _inherit = 'translation.mixin'
 
     currency_id = fields.Many2one('res.currency', string='Currency', default=lambda self: self.env.company.currency_id)
 
     date = fields.Date(string='Date', default=fields.Date.today)
     project_id = fields.Many2one('construction.project', string='Project', required=True)
-    summary = fields.Text(string='Daily Summary')
-    issues = fields.Text(string='Site Issues')
+    summary = fields.Text(string='Daily Summary', translate=True)
+    issues = fields.Text(string='Site Issues', translate=True)
     employee_count = fields.Integer(string="Number of Employees", default=0)
     labor_hours = fields.Float(string='Total Working Hours', compute="_compute_labor_hours", store=True)
     working_hours = fields.Float(string='Working Hours/employee', default=8.0)
@@ -46,6 +47,7 @@ class ConstructionDPR(models.Model):
 class ConstructionDPRMaterial(models.Model):
     _name = 'construction.dpr.material'
     _description = 'Materials Used in DPR'
+    _inherit = "translation.mixin"
 
     dpr_id = fields.Many2one('construction.dpr', string='DPR')
     product_id = fields.Many2one('product.product', string='Material')
@@ -55,7 +57,7 @@ class ConstructionDPRMaterial(models.Model):
     # unit_cost = fields.Float(string='Unit Cost', related='product_id.standard_price', readonly=True)
     unit_cost = fields.Float(string='Unit Cost')
     total_cost = fields.Float(string='Total Cost', compute='_compute_total_cost', store=True)
-    remarks = fields.Text(string='Remarks')
+    remarks = fields.Text(string='Remarks', translate=True)
 
     @api.depends('quantity', 'unit_cost')
     def _compute_total_cost(self):

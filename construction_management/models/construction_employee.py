@@ -5,10 +5,10 @@ from datetime import datetime, timedelta
 class ConstructionEmployeeWork(models.Model):
     _name = 'construction.employee.work'
     _description = 'Construction Employee Work Records'
-    _inherit = ['mail.thread', 'mail.activity.mixin']
+    _inherit = ['mail.thread', 'mail.activity.mixin', 'translation.mixin']
     _order = 'work_date desc, employee_id'
 
-    name = fields.Char(string='Reference', required=True, default='New', readonly=True)
+    name = fields.Char(string='Reference', required=True, default='New', readonly=True, translate=True)
     employee_id = fields.Many2one('hr.employee', string='Employee', required=True, tracking=True)
     project_id = fields.Many2one('construction.project', string='Project', required=True, tracking=True)
     work_date = fields.Date(string='Work Date', required=True, default=fields.Date.context_today, tracking=True)
@@ -24,7 +24,7 @@ class ConstructionEmployeeWork(models.Model):
     overtime_hours = fields.Float(string='Overtime Hours', compute='_compute_overtime_hours', store=True)
 
     # Task details
-    task_description = fields.Text(string='Task Description', tracking=True)
+    task_description = fields.Text(string='Task Description', tracking=True, translate=True)
     # task_category = fields.Selection([
     # ], string='Task Category', required=True)
 
@@ -46,11 +46,11 @@ class ConstructionEmployeeWork(models.Model):
 
     paid_amount = fields.Monetary(string='Paid Amount', tracking=True)
     payment_date = fields.Date(string='Payment Date')
-    payment_reference = fields.Char(string='Payment Reference')
+    payment_reference = fields.Char(string='Payment Reference', translate=True)
 
     # Additional fields
-    location = fields.Char(string='Work Location')
-    notes = fields.Text(string='Notes')
+    location = fields.Char(string='Work Location', translate=True)
+    notes = fields.Text(string='Notes', translate=True)
 
     # Status
     state = fields.Selection([
@@ -147,7 +147,7 @@ class ConstructionEmployeeWork(models.Model):
 
 
 class ConstructionProject(models.Model):
-    _inherit = 'construction.project'
+    _inherit = ['construction.project', 'translation.mixin']
 
     # Add employee work records to project
     employee_work_ids = fields.One2many('construction.employee.work', 'project_id',
@@ -165,7 +165,7 @@ class ConstructionProject(models.Model):
 
 # Add sequence for employee work records
 class IrSequence(models.Model):
-    _inherit = 'ir.sequence'
+    _inherit = ['ir.sequence', 'translation.mixin']
 
     @api.model
     def _get_construction_employee_work_sequence(self):

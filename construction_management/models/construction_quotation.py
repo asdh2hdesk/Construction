@@ -9,7 +9,7 @@ _logger = logging.getLogger(__name__)
 class ConstructionQuotation(models.Model):
     _name = 'construction.quotation'
     _description = 'Construction Quotation'
-    _inherit = ['mail.thread', 'mail.activity.mixin']
+    _inherit = ['mail.thread', 'mail.activity.mixin', 'translation.mixin']
     _order = 'date_quotation desc'
 
     name = fields.Char(string='Quotation Number', required=True, copy=False,
@@ -63,8 +63,8 @@ class ConstructionQuotation(models.Model):
         help='Final agreed contract value with the client (can be different from calculated total)'
     )
 
-    notes = fields.Text(string='Terms & Conditions')
-    internal_notes = fields.Text(string='Internal Notes')
+    notes = fields.Text(string='Terms & Conditions' ,translate=True)
+    internal_notes = fields.Text(string='Internal Notes' ,translate=True)
 
     state = fields.Selection([
         ('draft', 'Draft'),
@@ -240,7 +240,7 @@ class ConstructionQuotationLine(models.Model):
         ('piece', 'Piece')
     ], string='Unit', default='m2', required=True)
 
-    finishing_type = fields.Char(string='Finishing Type')
+    finishing_type = fields.Char(string='Finishing Type' ,translate=True)
     waste_percent = fields.Float(string='Waste %', default=5.0)
 
     # Costs

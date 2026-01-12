@@ -5,7 +5,7 @@ from datetime import timedelta
 class ConstructionProject(models.Model):
     _name = 'construction.project'
     _description = 'Construction Project'
-    _inherit = ['mail.thread', 'mail.activity.mixin']
+    _inherit = ['mail.thread', 'mail.activity.mixin', 'translation.mixin']
 
     name = fields.Char(string='Project Name', required=True, tracking=True)
     contract_value = fields.Monetary(string='Contract Value', tracking=True)
@@ -261,10 +261,10 @@ class ProjectTask(models.Model):
     _name = 'project.task.simple'
     _description = 'Project Timeline Task'
     _order = 'sequence, start_date'
-    _parent_store = True  # Enable hierarchical structure with better performance
-    _inherit = ['mail.thread', 'mail.activity.mixin']
+    _parent_store = True
+    _inherit = ['mail.thread', 'mail.activity.mixin', 'translation.mixin']
 
-    name = fields.Char(string='Task Name')
+    name = fields.Char(string='Task Name', translate=True)
     project_id = fields.Many2one('construction.project', string='Project',
                                  domain="[('state', '!=', 'cancelled')]")
     sequence = fields.Integer(string='Order', default=10)
@@ -272,10 +272,10 @@ class ProjectTask(models.Model):
     # Hierarchical fields for parent-child relationships
     parent_id = fields.Many2one('project.task.simple', string='Parent Task', ondelete='cascade')
     child_ids = fields.One2many('project.task.simple', 'parent_id', string='Subtasks')
-    parent_path = fields.Char(index=True)  # For _parent_store functionality
+    parent_path = fields.Char(index=True, translate=True)  # For _parent_store functionality
 
     # Display name with indentation for hierarchy
-    display_name = fields.Char(store=True)
+    display_name = fields.Char(store=True, translate=True)
     level = fields.Integer(compute='_compute_level', store=True, string='Level')
 
     # Task type to differentiate main tasks from subtasks
@@ -290,7 +290,7 @@ class ProjectTask(models.Model):
         store=True,
         readonly=False  # keep editable for leaf tasks (no children)
     )
-    description = fields.Text(string='Description')
+    description = fields.Text(string='Description', translate=True)
     assigned_to = fields.Many2one('res.users', string='Assigned To')
 
     status = fields.Selection([

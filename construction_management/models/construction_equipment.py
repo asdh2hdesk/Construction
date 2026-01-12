@@ -4,9 +4,9 @@ from odoo import models, fields, api
 class ConstructionEquipmentAllocation(models.Model):
     _name = 'construction.equipment.allocation'
     _description = 'Equipment Allocation to Projects'
-    _inherit = ['mail.thread', 'mail.activity.mixin']
+    _inherit = ['mail.thread', 'mail.activity.mixin', 'translation.mixin']
 
-    name = fields.Char(string='Allocation Reference', required=True, default='New', tracking=True)
+    name = fields.Char(string='Allocation Reference', required=True, default='New', tracking=True, translate=True)
     project_id = fields.Many2one('construction.project', string='Project', required=True, tracking=True)
     equipment_id = fields.Many2one('maintenance.equipment', string='Machine Number', required=True, tracking=True)
     construction_task_id = fields.Many2one(
@@ -45,7 +45,7 @@ class ConstructionEquipmentAllocation(models.Model):
                                           string='Maintenance Logs')
 
     # Notes
-    notes = fields.Text(string='Notes')
+    notes = fields.Text(string='Notes', translate=True)
     operator_name = fields.Many2one('hr.employee', string='Operator Name', tracking=True)
 
     @api.depends('hourly_rate')
@@ -97,6 +97,7 @@ class ConstructionEquipmentAllocation(models.Model):
 class ConstructionEquipmentUsage(models.Model):
     _name = 'construction.equipment.usage'
     _description = 'Equipment Usage Log'
+    _inherit = "translation.mixin"
 
     allocation_id = fields.Many2one('construction.equipment.allocation', string='Allocation', required=True,
                                     ondelete='cascade')
@@ -104,7 +105,7 @@ class ConstructionEquipmentUsage(models.Model):
     hours_used = fields.Float(string='Hours Used', required=True)
     fuel_consumption = fields.Float(string='Fuel Consumption (Liters)')
     operator_name = fields.Char(string='Operator Name')
-    work_description = fields.Text(string='Work Description')
+    work_description = fields.Text(string='Work Description', translate=True)
     remarks = fields.Text(string='Remarks')
 
     # Computed fields
@@ -121,6 +122,7 @@ class ConstructionEquipmentUsage(models.Model):
 class ConstructionEquipmentMaintenance(models.Model):
     _name = 'construction.equipment.maintenance'
     _description = 'Equipment Maintenance Log'
+    _inherit = "translation.mixin"
 
     allocation_id = fields.Many2one('construction.equipment.allocation', string='Allocation', required=True,
                                     ondelete='cascade')
@@ -132,11 +134,11 @@ class ConstructionEquipmentMaintenance(models.Model):
         ('inspection', 'Inspection')
     ], string='Maintenance Type', required=True)
 
-    description = fields.Text(string='Maintenance Description', required=True)
+    description = fields.Text(string='Maintenance Description', required=True, translate=True)
     cost = fields.Float(string='Maintenance Cost')
     downtime_hours = fields.Float(string='Downtime Hours')
-    technician_name = fields.Char(string='Technician Name')
-    parts_used = fields.Text(string='Parts Used')
+    technician_name = fields.Char(string='Technician Name', translate=True)
+    parts_used = fields.Text(string='Parts Used', translate=True)
     next_maintenance_date = fields.Date(string='Next Maintenance Date')
 
     # Computed fields
@@ -146,7 +148,7 @@ class ConstructionEquipmentMaintenance(models.Model):
 
 # Update the Construction Project model to include equipment costs
 class ConstructionProject(models.Model):
-    _inherit = 'construction.project'
+    _inherit = ['construction.project', 'translation.mixin']
 
     equipment_allocation_ids = fields.One2many('construction.equipment.allocation', 'project_id',
                                                string='Equipment Allocations')
