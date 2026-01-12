@@ -4,7 +4,7 @@ from odoo import models, fields, api
 class ConstructionEquipmentAllocation(models.Model):
     _name = 'construction.equipment.allocation'
     _description = 'Equipment Allocation to Projects'
-    _inherit = ['mail.thread', 'mail.activity.mixin', 'translation.mixin']
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string='Allocation Reference', required=True, default='New', tracking=True, translate=True)
     project_id = fields.Many2one('construction.project', string='Project', required=True, tracking=True)
@@ -97,7 +97,6 @@ class ConstructionEquipmentAllocation(models.Model):
 class ConstructionEquipmentUsage(models.Model):
     _name = 'construction.equipment.usage'
     _description = 'Equipment Usage Log'
-    _inherit = "translation.mixin"
 
     allocation_id = fields.Many2one('construction.equipment.allocation', string='Allocation', required=True,
                                     ondelete='cascade')
@@ -122,7 +121,6 @@ class ConstructionEquipmentUsage(models.Model):
 class ConstructionEquipmentMaintenance(models.Model):
     _name = 'construction.equipment.maintenance'
     _description = 'Equipment Maintenance Log'
-    _inherit = "translation.mixin"
 
     allocation_id = fields.Many2one('construction.equipment.allocation', string='Allocation', required=True,
                                     ondelete='cascade')
@@ -148,7 +146,7 @@ class ConstructionEquipmentMaintenance(models.Model):
 
 # Update the Construction Project model to include equipment costs
 class ConstructionProject(models.Model):
-    _inherit = ['construction.project', 'translation.mixin']
+    _inherit = 'construction.project'
 
     equipment_allocation_ids = fields.One2many('construction.equipment.allocation', 'project_id',
                                                string='Equipment Allocations')

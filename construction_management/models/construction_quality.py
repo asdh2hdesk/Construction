@@ -3,7 +3,6 @@ from odoo import models, fields
 class ConstructionQuality(models.Model):
     _name = 'construction.quality'
     _description = 'Quality & Safety'
-    _inherit = "translation.mixin"
 
     project_id = fields.Many2one('construction.project', string='Project')
     inspection_date = fields.Date(string='Inspection Date')

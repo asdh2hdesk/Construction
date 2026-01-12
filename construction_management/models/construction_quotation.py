@@ -9,7 +9,7 @@ _logger = logging.getLogger(__name__)
 class ConstructionQuotation(models.Model):
     _name = 'construction.quotation'
     _description = 'Construction Quotation'
-    _inherit = ['mail.thread', 'mail.activity.mixin', 'translation.mixin']
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _order = 'date_quotation desc'
 
     name = fields.Char(string='Quotation Number', required=True, copy=False,

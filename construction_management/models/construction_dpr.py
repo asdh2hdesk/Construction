@@ -4,7 +4,6 @@ from odoo import models, fields, api
 class ConstructionDPR(models.Model):
     _name = 'construction.dpr'
     _description = 'Daily Progress Report'
-    _inherit = 'translation.mixin'
 
     currency_id = fields.Many2one('res.currency', string='Currency', default=lambda self: self.env.company.currency_id)
 
@@ -47,7 +46,6 @@ class ConstructionDPR(models.Model):
 class ConstructionDPRMaterial(models.Model):
     _name = 'construction.dpr.material'
     _description = 'Materials Used in DPR'
-    _inherit = "translation.mixin"
 
     dpr_id = fields.Many2one('construction.dpr', string='DPR')
     product_id = fields.Many2one('product.product', string='Material')

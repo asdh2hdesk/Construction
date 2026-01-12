@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 class ConstructionEmployeeWork(models.Model):
     _name = 'construction.employee.work'
     _description = 'Construction Employee Work Records'
-    _inherit = ['mail.thread', 'mail.activity.mixin', 'translation.mixin']
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _order = 'work_date desc, employee_id'
 
     name = fields.Char(string='Reference', required=True, default='New', readonly=True, translate=True)
@@ -147,7 +147,7 @@ class ConstructionEmployeeWork(models.Model):
 
 
 class ConstructionProject(models.Model):
-    _inherit = ['construction.project', 'translation.mixin']
+    _inherit = 'construction.project'
 
     # Add employee work records to project
     employee_work_ids = fields.One2many('construction.employee.work', 'project_id',

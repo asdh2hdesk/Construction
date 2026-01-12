@@ -3,7 +3,6 @@ from odoo import models, fields, api
 class ConstructionProgress(models.Model):
     _name = 'construction.progress'
     _description = 'Construction Progress'
-    _inherit = "translation.mixin"
 
     name = fields.Char(string='Progress Entry', translate=True)
     project_id = fields.Many2one('construction.project', string='Project', required=True)
