@@ -7,7 +7,7 @@ class ConstructionProject(models.Model):
     _description = 'Construction Project'
     _inherit = ['mail.thread', 'mail.activity.mixin', 'translation.mixin']
 
-    name = fields.Char(string='Project Name', required=True, tracking=True, translate=True)
+    name = fields.Char(string='Project Name', required=True, tracking=True)
     contract_value = fields.Monetary(string='Contract Value', tracking=True)
     currency_id = fields.Many2one(
         'res.currency',
