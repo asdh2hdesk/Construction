@@ -3,8 +3,8 @@
 }
 
 .o_construction_dashboard {
-    background: url('/construction_management/static/src/img/luxa.org-opacity-changed-._dashboard_bg (1).png') no-repeat center;
-    opacity; 0.2;
+    background: url('/construction_management/static/src/img/luxa.org-opacity-changed-._dashboard_bg (1).png') no-repeat center center fixed;
+    opacity; 0.9;
     background-size: cover;
     padding: 20px 40px;
     min-height: 100vh;

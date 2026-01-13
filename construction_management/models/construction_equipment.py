@@ -6,7 +6,7 @@ class ConstructionEquipmentAllocation(models.Model):
     _description = 'Equipment Allocation to Projects'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    name = fields.Char(string='Allocation Reference', required=True, default='New', tracking=True, translate=True)
+    name = fields.Char(string='Allocation Reference', required=True, default='New', tracking=True)
     project_id = fields.Many2one('construction.project', string='Project', required=True, tracking=True)
     equipment_id = fields.Many2one('maintenance.equipment', string='Machine Number', required=True, tracking=True)
     construction_task_id = fields.Many2one(
@@ -45,7 +45,7 @@ class ConstructionEquipmentAllocation(models.Model):
                                           string='Maintenance Logs')
 
     # Notes
-    notes = fields.Text(string='Notes', translate=True)
+    notes = fields.Text(string='Notes')
     operator_name = fields.Many2one('hr.employee', string='Operator Name', tracking=True)
 
     @api.depends('hourly_rate')
@@ -104,7 +104,7 @@ class ConstructionEquipmentUsage(models.Model):
     hours_used = fields.Float(string='Hours Used', required=True)
     fuel_consumption = fields.Float(string='Fuel Consumption (Liters)')
     operator_name = fields.Char(string='Operator Name')
-    work_description = fields.Text(string='Work Description', translate=True)
+    work_description = fields.Text(string='Work Description')
     remarks = fields.Text(string='Remarks')
 
     # Computed fields
@@ -121,6 +121,7 @@ class ConstructionEquipmentUsage(models.Model):
 class ConstructionEquipmentMaintenance(models.Model):
     _name = 'construction.equipment.maintenance'
     _description = 'Equipment Maintenance Log'
+    _inherit = "translation.mixin"
 
     allocation_id = fields.Many2one('construction.equipment.allocation', string='Allocation', required=True,
                                     ondelete='cascade')
@@ -135,8 +136,8 @@ class ConstructionEquipmentMaintenance(models.Model):
     description = fields.Text(string='Maintenance Description', required=True, translate=True)
     cost = fields.Float(string='Maintenance Cost')
     downtime_hours = fields.Float(string='Downtime Hours')
-    technician_name = fields.Char(string='Technician Name', translate=True)
-    parts_used = fields.Text(string='Parts Used', translate=True)
+    technician_name = fields.Char(string='Technician Name')
+    parts_used = fields.Text(string='Parts Used')
     next_maintenance_date = fields.Date(string='Next Maintenance Date')
 
     # Computed fields

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- Tree View -->
-    <record id="view_construction_inventory_tree" model="ir.ui.view">
-        <field name="name">construction.inventory.tree</field>
+    <!-- list View -->
+    <record id="view_construction_inventory_list" model="ir.ui.view">
+        <field name="name">construction.inventory.list</field>
         <field name="model">construction.inventory</field>
         <field name="arch" type="xml">
             <list string="Construction Inventory"

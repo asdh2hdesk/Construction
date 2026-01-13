@@ -9,7 +9,7 @@ _logger = logging.getLogger(__name__)
 class ConstructionQuotation(models.Model):
     _name = 'construction.quotation'
     _description = 'Construction Quotation'
-    _inherit = ['mail.thread', 'mail.activity.mixin']
+    _inherit = ['mail.thread', 'mail.activity.mixin', 'translation.mixin']
     _order = 'date_quotation desc'
 
     name = fields.Char(string='Quotation Number', required=True, copy=False,
@@ -224,7 +224,7 @@ class ConstructionQuotationLine(models.Model):
         ('other', 'Other')
     ], string='Work Type', required=True)
 
-    description = fields.Text(string='Description')
+    description = fields.Text(string='Description',translate=True)
 
     # Input parameters
     surface_area = fields.Float(string='Surface (m²)', default=0.0)
@@ -240,7 +240,7 @@ class ConstructionQuotationLine(models.Model):
         ('piece', 'Piece')
     ], string='Unit', default='m2', required=True)
 
-    finishing_type = fields.Char(string='Finishing Type' ,translate=True)
+    finishing_type = fields.Char(string='Finishing Type')
     waste_percent = fields.Float(string='Waste %', default=5.0)
 
     # Costs

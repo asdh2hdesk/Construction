@@ -5,6 +5,7 @@ class ConstructionInventory(models.Model):
     _name = 'construction.inventory'
     _description = 'Construction Inventory'
     _rec_name = 'material_id'
+    _inherit = "translation.mixin"
 
     material_id = fields.Many2one('product.product', string='Material', required=True)
     project_id = fields.Many2one('construction.project', string='Project')
@@ -123,7 +124,7 @@ class ConstructionInventory(models.Model):
             'type': 'ir.actions.act_window',
             'name': f'BOQ Items - {self.material_id.name}',
             'res_model': 'construction.boq',
-            'view_mode': 'tree,form',
+            'view_mode': 'list,form',
             'domain': domain,
             'context': {
                 'default_material_id': self.material_id.id,

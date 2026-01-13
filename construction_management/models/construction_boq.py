@@ -4,8 +4,9 @@ from odoo import models, fields, api
 class ConstructionBOQ(models.Model):
     _name = 'construction.boq'
     _description = 'Bill of Quantity'
+    _inherit = "translation.mixin"
 
-    name = fields.Char(string='BOQ Item No.', required=True)
+    name = fields.Char(string='BOQ Item No.', required=True, translate=True)
     project_id = fields.Many2one('construction.project', string='Project', required=True)
     parent_id = fields.Many2one('construction.boq', string='Parent BOQ', domain="[('project_id', '=', project_id)]")
     child_ids = fields.One2many('construction.boq', 'parent_id', string='Child BOQ Items')

@@ -4,12 +4,12 @@ class ConstructionProgress(models.Model):
     _name = 'construction.progress'
     _description = 'Construction Progress'
 
-    name = fields.Char(string='Progress Entry', translate=True)
+    name = fields.Char(string='Progress Entry')
     project_id = fields.Many2one('construction.project', string='Project', required=True)
     task_id = fields.Many2one('project.task', string='Task')
     date = fields.Date(string='Date', default=fields.Date.today)
     progress_percent = fields.Float(string='Progress %', required=True)
-    description = fields.Text(string='Notes', translate=True)
+    description = fields.Text(string='Notes')
 
     @api.model
     def create(self, vals):

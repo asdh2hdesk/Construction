@@ -4,6 +4,7 @@ from odoo import models, fields, api
 class ConstructionDPR(models.Model):
     _name = 'construction.dpr'
     _description = 'Daily Progress Report'
+    _inherit = "translation.mixin"
 
     currency_id = fields.Many2one('res.currency', string='Currency', default=lambda self: self.env.company.currency_id)
 
@@ -55,7 +56,7 @@ class ConstructionDPRMaterial(models.Model):
     # unit_cost = fields.Float(string='Unit Cost', related='product_id.standard_price', readonly=True)
     unit_cost = fields.Float(string='Unit Cost')
     total_cost = fields.Float(string='Total Cost', compute='_compute_total_cost', store=True)
-    remarks = fields.Text(string='Remarks', translate=True)
+    remarks = fields.Text(string='Remarks')
 
     @api.depends('quantity', 'unit_cost')
     def _compute_total_cost(self):

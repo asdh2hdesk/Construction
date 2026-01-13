@@ -97,9 +97,9 @@
                                 </list>
                             </field>
                         </page>
-                        <page string="Inventory Moves">
-                            <field name="stock_move_ids"/>
-                        </page>
+<!--                        <page string="Inventory Moves">-->
+<!--                            <field name="stock_move_ids"/>-->
+<!--                        </page>-->
                         <page string="Purchases">
                             <field name="purchase_ids"/>
                         </page>

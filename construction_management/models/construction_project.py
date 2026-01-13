@@ -5,9 +5,9 @@ from datetime import timedelta
 class ConstructionProject(models.Model):
     _name = 'construction.project'
     _description = 'Construction Project'
-    _inherit = ['mail.thread', 'mail.activity.mixin']
+    _inherit = ['mail.thread', 'mail.activity.mixin', 'translation.mixin']
 
-    name = fields.Char(string='Project Name', required=True, tracking=True)
+    name = fields.Char(string='Project Name', required=True, tracking=True, translate=True)
     contract_value = fields.Monetary(string='Contract Value', tracking=True)
     currency_id = fields.Many2one(
         'res.currency',
@@ -262,7 +262,7 @@ class ProjectTask(models.Model):
     _description = 'Project Timeline Task'
     _order = 'sequence, start_date'
     _parent_store = True
-    _inherit = ['mail.thread', 'mail.activity.mixin']
+    _inherit = ['mail.thread', 'mail.activity.mixin', 'translation.mixin']
 
     name = fields.Char(string='Task Name', translate=True)
     project_id = fields.Many2one('construction.project', string='Project',

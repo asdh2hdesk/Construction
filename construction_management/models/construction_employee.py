@@ -8,7 +8,7 @@ class ConstructionEmployeeWork(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _order = 'work_date desc, employee_id'
 
-    name = fields.Char(string='Reference', required=True, default='New', readonly=True, translate=True)
+    name = fields.Char(string='Reference', required=True, default='New', readonly=True)
     employee_id = fields.Many2one('hr.employee', string='Employee', required=True, tracking=True)
     project_id = fields.Many2one('construction.project', string='Project', required=True, tracking=True)
     work_date = fields.Date(string='Work Date', required=True, default=fields.Date.context_today, tracking=True)
@@ -46,10 +46,10 @@ class ConstructionEmployeeWork(models.Model):
 
     paid_amount = fields.Monetary(string='Paid Amount', tracking=True)
     payment_date = fields.Date(string='Payment Date')
-    payment_reference = fields.Char(string='Payment Reference', translate=True)
+    payment_reference = fields.Char(string='Payment Reference')
 
     # Additional fields
-    location = fields.Char(string='Work Location', translate=True)
+    location = fields.Char(string='Work Location')
     notes = fields.Text(string='Notes', translate=True)
 
     # Status
@@ -165,7 +165,7 @@ class ConstructionProject(models.Model):
 
 # Add sequence for employee work records
 class IrSequence(models.Model):
-    _inherit = ['ir.sequence', 'translation.mixin']
+    _inherit = 'ir.sequence'
 
     @api.model
     def _get_construction_employee_work_sequence(self):
