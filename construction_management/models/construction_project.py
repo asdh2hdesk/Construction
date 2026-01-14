@@ -272,7 +272,7 @@ class ProjectTask(models.Model):
     # Hierarchical fields for parent-child relationships
     parent_id = fields.Many2one('project.task.simple', string='Parent Task', ondelete='cascade')
     child_ids = fields.One2many('project.task.simple', 'parent_id', string='Subtasks')
-    parent_path = fields.Char(index=True, translate=True)  # For _parent_store functionality
+    parent_path = fields.Char(index=True)
 
     # Display name with indentation for hierarchy
     display_name = fields.Char(store=True, translate=True)
